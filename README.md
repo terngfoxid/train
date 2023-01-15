@@ -2,6 +2,7 @@
 My training project for improve my skills
 
 I learned 
+<br>
 -next.js 
 -solid.js 
 -tailwindCSS 
