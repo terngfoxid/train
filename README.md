@@ -2,17 +2,17 @@
 My training project for improve my skills
 
 I learned 
-<br>
+
 -next.js 
-
+<br>
 -solid.js 
-
+<br>
 -tailwindCSS 
-
+<br>
 -unoCSS 
-
+<br>
 -firework.js 
-
+<br>
 -animateCSS 
-
+<br>
 -Firebase(Firestore)
