@@ -13,10 +13,10 @@ export default function Ship_Card(ship: any) {
 
     const callAPI = async () => {
         try {
-            const res = await fetch('/api/ship/' + ship.ship);
+            const res = await fetch('/api/ship/' + ship.ship.toLowerCase());
             const loaddata = await res.json()
             setShipdata({ data: loaddata })
-            localStorage.setItem(""+ship.ship.replaceAll("_"," ") , JSON.stringify(loaddata))
+            localStorage.setItem(""+ship.ship.replaceAll("_"," ").toLowerCase() , JSON.stringify(loaddata))
             return
         } catch (err) {
             console.log(err);
@@ -25,7 +25,7 @@ export default function Ship_Card(ship: any) {
 
     useEffect(() => {
 
-        const buffername= ship.ship.replaceAll("_"," ");
+        const buffername= ship.ship.replaceAll("_"," ").toLowerCase();
 
         const localdata = localStorage.getItem(""+ship.ship)
         if((localdata != null) && (JSON.parse(localdata).name == buffername))
@@ -47,7 +47,7 @@ export default function Ship_Card(ship: any) {
     }
     else if(shipdata.data.error != null)
     {
-        const buffername= ship.ship.replaceAll("_"," ")
+        const buffername= ship.ship.replaceAll("_"," ").toLowerCase()
         localStorage.removeItem(buffername)
 
         const card_style = (
@@ -98,6 +98,10 @@ export default function Ship_Card(ship: any) {
                             <div className="w-11/12 md:w-11/12">
                                 <p className="text-xs py-2">(รูปอาจจะโหลดช้าหน่อยนะ)</p>
                         <img className="object-scale-down" src={"https://drive.google.com/uc?export=view&id="+shipdata.data.skill} alt={shipdata.data.name+" picture"}></img>
+                        {(shipdata.data.re != null) ? <>
+                            <p>Retrofit</p>
+                            <img className="object-scale-down" src={"https://drive.google.com/uc?export=view&id="+shipdata.data.re} alt={shipdata.data.name+" picture"}></img>
+                        </>: <></>}
                         </div>
                         </div>
                     </div>

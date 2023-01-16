@@ -10,7 +10,7 @@ export default async function handler(req: any, res: { status: (arg0: number) =>
     method,
   } = req
 
-  const docname=name.replaceAll("_"," ");
+  const docname=name.replaceAll("_"," ").toLowerCase();
 
     const snapshot = await db.collection('ship').doc(docname).get();
 
