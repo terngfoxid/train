@@ -23,7 +23,7 @@ export default function Topbar() {
     <li className='shadow md:shadow-none'><Link className={topbar_style.list_style} href="/">Home</Link></li>
   )
   menu_list.push(
-    <li className='shadow md:shadow-none'><Link className={topbar_style.list_style} href="/#">Test</Link></li>
+    <li className='shadow md:shadow-none'><Link className={topbar_style.list_style} href="/ship">Ship</Link></li>
   )
   menu_list.push(
     <li className='shadow md:shadow-none'><Link className={topbar_style.list_style} href="/contact">Contact</Link></li>
@@ -86,7 +86,7 @@ export default function Topbar() {
                 <div className='m-0 h-full items-center'>
                   <div className={navbar ? 'flex-auto justify-self-center mt-0 block md:h-full md:items-center' : 'hidden md:block md:h-full md:items-center'}>
                     <div className={topbar_style.smalldevice_style}>
-                      <ul className="items-center justify-center gap-x-2 md:flex md:space-x-20 md:space-y-0 h-full w-full p-0 m-0">
+                      <ul className="items-center justify-center gap-x-2 md:flex md:space-x-10 md:space-y-0 h-full w-full p-0 m-0">
                         {menu_list}
                       </ul>
                     </div>

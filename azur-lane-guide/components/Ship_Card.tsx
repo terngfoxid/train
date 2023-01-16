@@ -16,8 +16,7 @@ export default function Ship_Card(ship: any) {
             const res = await fetch('/api/ship/' + ship.ship);
             const loaddata = await res.json()
             setShipdata({ data: loaddata })
-            count++
-            console.log(count)
+            localStorage.setItem(""+ship.ship , JSON.stringify(loaddata))
             return
         } catch (err) {
             console.log(err);
@@ -25,7 +24,18 @@ export default function Ship_Card(ship: any) {
     };
 
     useEffect(() => {
-        callAPI()
+
+        const buffername= ship.ship.replaceAll("_"," ");
+
+        const localdata = localStorage.getItem(""+ship.ship)
+        if((localdata != null) && (JSON.parse(localdata).name == buffername))
+        {
+            setShipdata({ data: JSON.parse(localdata) })
+        }
+        else
+        {
+            callAPI()
+        }
     }, []);
 
     if (shipdata.data.name == null && shipdata.data.error ==null) {

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Topbar from '../components/Topbar'
 import Footer from '../components/Footer'
+import Home_Card from '../components/Home_Card'
 
 export default function Home() {
   return (
@@ -15,18 +16,12 @@ export default function Home() {
       </Head>
       <Topbar />
 
-      <main className={styles.main}>
-
-        <h1 className="text-3xl font-bold underline text-orange-600">
-          Hello world! 
-        </h1>
-
-        <h1 className="text-3xl text-blue-600">
-          เทสสสสส
-        </h1>
-
+      <main>
+        <br></br>
+        <Home_Card />
+        <br></br>
       </main>
-      <Footer/>
+      <Footer />
     </>
   )
 }
