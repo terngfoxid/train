@@ -8,15 +8,15 @@ export default function Ship_Card(ship: any) {
         faction : null,
         type : null,
         error : null,
+        re: null,
     }});
-    let count = 0
 
     const callAPI = async () => {
         try {
             const res = await fetch('/api/ship/' + ship.ship);
             const loaddata = await res.json()
             setShipdata({ data: loaddata })
-            localStorage.setItem(""+ship.ship , JSON.stringify(loaddata))
+            localStorage.setItem(""+ship.ship.replaceAll("_"," ") , JSON.stringify(loaddata))
             return
         } catch (err) {
             console.log(err);
@@ -47,6 +47,9 @@ export default function Ship_Card(ship: any) {
     }
     else if(shipdata.data.error != null)
     {
+        const buffername= ship.ship.replaceAll("_"," ")
+        localStorage.removeItem(buffername)
+
         const card_style = (
             {
                 title_style: 'text-zinc-700 dark:text-zinc-300 text-2xl font-bold text-center',
@@ -55,6 +58,7 @@ export default function Ship_Card(ship: any) {
                 body_style: "text-zinc-600 dark:text-zinc-400 text-xl text-center",
             }
         );
+
         
         return (
             <div className={card_style.position}>

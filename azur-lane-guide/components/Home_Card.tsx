@@ -33,7 +33,7 @@ export default function Home_Card() {
                                     <p className="py-1 ">เว็บไซต์นี้จัดทำเพื่อสนับสนุนผู้เล่นเกม Azur Lane ชาวไทย</p>
                                     <p className="py-1 ">เรามีการเก็บข้อมูลบางส่วนไว้ใน Browser แบบ Offline</p>
                                     <p className="py-1 ">เนื่องจากต้องการประหยัดค่าใช้จ่ายในการดูแลเว็บไซต์</p>
-                                    <p className="py-1 ">หากข้อมูลตัวละครไม่มีการอัพเดตเช่น มี Retrofit มาใหม่</p>
+                                    <p className="py-1 ">หากข้อมูลตัวละครไม่มีการอัพเดตเช่น ไม่มีร่าง Retrofit ใหม่</p>
                                     <p className="py-1 ">ให้ทำการลบ ประวัติการใช้งาน หรือ Cookies ของเว็บไซต์นี้</p>
                                     <p className="py-1 ">***ขออภัยในความไม่สดวก***</p>
                                 </div>
