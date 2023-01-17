@@ -1,0 +1,39 @@
+[debug] [2023-01-17T14:59:32.710Z] ----------------------------------------------------------------------
+[debug] [2023-01-17T14:59:32.712Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\terng\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-01-17T14:59:32.712Z] CLI Version:   11.20.0
+[debug] [2023-01-17T14:59:32.712Z] Platform:      win32
+[debug] [2023-01-17T14:59:32.712Z] Node Version:  v18.12.1
+[debug] [2023-01-17T14:59:32.713Z] Time:          Tue Jan 17 2023 21:59:32 GMT+0700 (Indochina Time)
+[debug] [2023-01-17T14:59:32.713Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-17T14:59:32.770Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-17T14:59:32.770Z] > authorizing via signed-in user (terngfoxid@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\terng\train\azur-lane-guide
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-01-17T14:59:46.138Z] Using project from CLI flag: azur-lane-guide
+[debug] [2023-01-17T14:59:46.140Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/azur-lane-guide [none]
+[debug] [2023-01-17T14:59:46.896Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/azur-lane-guide 200
+[debug] [2023-01-17T14:59:46.896Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/azur-lane-guide {"projectId":"azur-lane-guide","projectNumber":"416897764300","displayName":"Azur Lane Guide","name":"projects/azur-lane-guide","resources":{"hostingSite":"azur-lane-guide"},"state":"ACTIVE","etag":"1_6f3df3d6-5937-46be-9be5-4cb9ff97b60c"}
+[info] i  Using project azur-lane-guide (Azur Lane Guide) 
+[info] 
+=== Hosting Setup

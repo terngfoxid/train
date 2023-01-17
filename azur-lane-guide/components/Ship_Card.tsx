@@ -2,21 +2,24 @@ import { useEffect, useState } from "react";
 import Loading from "./overlay/Loading";
 
 export default function Ship_Card(ship: any) {
-    const [shipdata, setShipdata] = useState({ data: {
-        name : null,
-        skill : null,
-        faction : null,
-        type : null,
-        error : null,
-        re: null,
-    }});
+    const [shipdata, setShipdata] = useState({
+        data: {
+            name: null,
+            skill: null,
+            faction: null,
+            type: null,
+            error: null,
+            re: null,
+            faction_short: null,
+        }
+    });
 
     const callAPI = async () => {
         try {
             const res = await fetch('/api/ship/' + ship.ship.toLowerCase());
             const loaddata = await res.json()
             setShipdata({ data: loaddata })
-            localStorage.setItem(""+ship.ship.replaceAll("_"," ").toLowerCase() , JSON.stringify(loaddata))
+            localStorage.setItem("" + ship.ship.replaceAll("_", " ").toLowerCase(), JSON.stringify(loaddata))
             return
         } catch (err) {
             console.log(err);
@@ -25,29 +28,26 @@ export default function Ship_Card(ship: any) {
 
     useEffect(() => {
 
-        const buffername= ship.ship.replaceAll("_"," ").toLowerCase();
+        const buffername = ship.ship.replaceAll("_", " ").toLowerCase();
 
-        const localdata = localStorage.getItem(""+ship.ship)
-        if((localdata != null) && (JSON.parse(localdata).name == buffername))
-        {
+        const localdata = localStorage.getItem("" + ship.ship)
+        if ((localdata != null) && (JSON.parse(localdata).name == buffername)) {
             setShipdata({ data: JSON.parse(localdata) })
         }
-        else
-        {
+        else {
             callAPI()
         }
     }, []);
 
-    if (shipdata.data.name == null && shipdata.data.error ==null) {
+    if (shipdata.data.name == null && shipdata.data.error == null) {
         return (
             <div className="flex justify-center">
                 <Loading />
             </div>
         )
     }
-    else if(shipdata.data.error != null)
-    {
-        const buffername= ship.ship.replaceAll("_"," ").toLowerCase()
+    else if (shipdata.data.error != null) {
+        const buffername = ship.ship.replaceAll("_", " ").toLowerCase()
         localStorage.removeItem(buffername)
 
         const card_style = (
@@ -59,7 +59,7 @@ export default function Ship_Card(ship: any) {
             }
         );
 
-        
+
         return (
             <div className={card_style.position}>
                 <div className={card_style.shape}>
@@ -97,12 +97,15 @@ export default function Ship_Card(ship: any) {
                         <div className="flex justify-center">
                             <div className="w-11/12 md:w-11/12">
                                 <p className="text-xs py-2">(รูปอาจจะโหลดช้าหน่อยนะ)</p>
-                        <img className="object-scale-down" src={"https://drive.google.com/uc?export=view&id="+shipdata.data.skill} alt={shipdata.data.name+" picture"}></img>
-                        {(shipdata.data.re != null) ? <>
-                            <p>Retrofit</p>
-                            <img className="object-scale-down" src={"https://drive.google.com/uc?export=view&id="+shipdata.data.re} alt={shipdata.data.name+" picture"}></img>
-                        </>: <></>}
-                        </div>
+                                {(shipdata.data.skill != null) ? <>
+                                    <img className="object-scale-down" src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.skill} alt={shipdata.data.name + " picture"}></img>
+                                </> : <></>}
+
+                                {(shipdata.data.re != null) ? <>
+                                    <p>Retrofit</p>
+                                    <img className="object-scale-down" src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.re} alt={shipdata.data.name + " picture"}></img>
+                                </> : <></>}
+                            </div>
                         </div>
                     </div>
                     <br></br>

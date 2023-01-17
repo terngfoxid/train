@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Topbar from '../../components/Topbar'
 import Footer from '../../components/Footer'
+import Find_Ship_Card from '../../components/Find_Ship_Card'
 
 export default function Home() {
-  console.log("444")
   return (
     <>
       <Head>
@@ -18,7 +18,7 @@ export default function Home() {
       <main >
 
         <br></br>
-
+        <Find_Ship_Card />
         <br></br>
 
       </main>
