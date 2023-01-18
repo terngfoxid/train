@@ -62,7 +62,7 @@ export default function Footer() {
     return (
         <div>
             <footer className={footer_style.bar_style}>
-                <div className='w-screen h-auto py-1'>
+                <div className='w-auto h-auto py-1'>
                     <div>
                         <div className="flex justify-center">
                             {dark ? <p className={footer_style.mode_style} onClick={clickBTTmode}> Change Mode To Light</p>

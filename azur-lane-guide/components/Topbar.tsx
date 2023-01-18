@@ -9,7 +9,7 @@ export default function Topbar() {
       appname: "Azur Lane Guide TH",
       svg_appname: "",
       //------
-      bar_style: "bg-neutral-200 shadow-xl dark:bg-neutral-800",//Header Bar color
+      bar_style: "bg-neutral-200 shadow-xl dark:bg-neutral-800 w-full",//Header Bar color
       appname_style: "text-2xl md:text-3xl text-zinc-600 font-bold my-1 px-2 dark:text-zinc-300",//App name on left
       list_style: "block w-full h-full py-3 pl-3 pr-4 rounded no-underline text-center text-zinc-600 font-bold md:shadow-none hover:bg-neutral-300 hover:dark:bg-neutral-600 dark:text-gray-300 ",//Hover of Menu list on right 
       smalldevice_style: "bg-neutral-200 w-full h-full items-center shadow md:shadow-none dark:bg-neutral-800 ",
@@ -33,7 +33,7 @@ export default function Topbar() {
     <>
       <div >
         <nav className={topbar_style.bar_style}>
-          <div className="justify-center w-screen items-center flex">
+          <div className="justify-center w-full items-center flex">
             <div className='w-full md:w-5/6 h-full flex'>
               <div className="w-full md:flex md:justify-between">
                 <div className='flex justify-center'>
