@@ -11,6 +11,7 @@ export default function Ship_Card(ship: any) {
             error: null,
             re: null,
             faction_short: null,
+            fatesim: null,
         }
     });
 
@@ -89,7 +90,12 @@ export default function Ship_Card(ship: any) {
             <div className={card_style.position}>
                 <div className={card_style.shape}>
                     <br></br>
-                    <h1 className={card_style.title_style}>{shipdata.data.name}</h1>
+                    <h1 className={card_style.title_style}>
+                        {shipdata.data.faction_short != null ? <>
+                        {shipdata.data.faction_short+" "}
+                        </>:<></>}
+                        {shipdata.data.name}
+                        </h1>
                     <br></br>
                     <div className={card_style.body_style}>
                         <p>Faction: {shipdata.data.faction}</p>
@@ -105,6 +111,12 @@ export default function Ship_Card(ship: any) {
                                     <p>Retrofit</p>
                                     <img className="object-scale-down" src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.re} alt={shipdata.data.name + " picture"}></img>
                                 </> : <></>}
+
+                                {(shipdata.data.fatesim != null) ? <>
+                                    <p>Fate Simulation</p>
+                                    <img className="object-scale-down" src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.fatesim} alt={shipdata.data.name + " picture"}></img>
+                                </> : <></>}
+
                             </div>
                         </div>
                     </div>

@@ -67,7 +67,7 @@ export default function Faction_Ship_Card(faction: any) {
                     position: "flex justify-center",
                     body_style: "text-zinc-700 dark:text-zinc-300 text-base text-center",
                     button_style: "w-11/12 rounded-lg bg-neutral-300 dark:bg-neutral-700 hover:bg-neutral-400 dark:hover:bg-neutral-600 shadow",
-                    text_bg:"",
+                    text_bg: "",
                 }
             );
 
@@ -83,13 +83,14 @@ export default function Faction_Ship_Card(faction: any) {
                                     <div className="flex justify-start items-center w-full">
                                         <img src={"/images/type/" + shipdata.data.data[buffer].type + ".png"} alt='type image' width="50" />
                                         <div className="inline-block rounded bg-neutral-400 dark:bg-neutral-600 w-full ">
-                                        <p>&nbsp;{shipdata.data.data[buffer].name}</p>
+                                            <p>&nbsp;{shipdata.data.data[buffer].name}</p>
                                         </div>
                                     </div>
                                     <div>
-                                        { shipdata.data.data[buffer].chibi != null ? <>
-                                            <img className="w-full md:w-max" src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.data[buffer].chibi} alt='ship chibi image' />
-                                            </> : <></>
+                                        {shipdata.data.data[buffer].chibi != null ? <>
+                                            <div className="w-full flex justify-center items-center">
+                                                <img src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.data[buffer].chibi} alt='ship chibi image' />
+                                            </div></> : <></>
                                         }
                                     </div>
                                 </Link>
@@ -115,9 +116,9 @@ export default function Faction_Ship_Card(faction: any) {
         }
     } catch (err) {
         console.log(err);
-        return(
+        return (
             <div>
-                
+
             </div>
         )
     }
