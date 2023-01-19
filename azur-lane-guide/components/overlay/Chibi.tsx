@@ -10,7 +10,7 @@ export default function Chibi(chibi: any) {
     return (
         <div id="shipchibi" className={chibi_style.set_overlay}>
             <div className="flex justify-items-start w-full"> 
-            <img className="w-1/6" src={"https://drive.google.com/uc?export=view&id=" + chibi.chibi} alt='ship chibi image' />
+            <img className="w-1/6 md:w-max" src={"https://drive.google.com/uc?export=view&id=" + chibi.chibi} alt='ship chibi image' />
             </div>
         </div>
     )
