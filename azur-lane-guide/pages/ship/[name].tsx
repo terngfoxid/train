@@ -4,6 +4,7 @@ import Footer from '../../components/Footer'
 import Ship_Card from '../../components/Ship_Card'
 import { useRouter } from 'next/router'
 import Loading from '../../components/overlay/Loading'
+import Test_Card from '../../components/test/Test_Card'
 
 export default function Ship() {
     const router = useRouter()
@@ -51,7 +52,8 @@ export default function Ship() {
                     <br></br>
                     <Ship_Card ship={name} />
                     <br></br>
-
+                    <Test_Card />
+                    <br></br>
                 </main>
                 <Footer />
             </>
