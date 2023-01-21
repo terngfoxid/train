@@ -33,7 +33,7 @@ export default function Home_Card() {
                         <p className="hidden md:block">&nbsp;</p>
                         <p>Azur Lane Guide TH</p>
                         <p className="hidden md:block">&nbsp;</p>
-                        <p className="text-xs">(รุ่นทดสอบ V.0.1.1)</p>
+                        <p className="text-xs">(รุ่นทดสอบ V.0.1.2)</p>
                     </div>
                 </h1>
                 <br className="hidden md:block"></br>

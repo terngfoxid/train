@@ -4,6 +4,12 @@ import Loading from "./overlay/Loading";
 
 export default function Faction_Ship_Card(faction: any) {
     const [shipdata, setShipdata] = useState({ data: { error: null, data: [{ name: null, type: null, chibi: null }] } });
+    const [type, setType] = useState("All Type")
+    const [isDropdown, setDropdown] = useState(false);
+
+    const handleDropDown = () => {
+        setDropdown(!isDropdown);
+    };
 
     const callAPI = async () => {
         try {
@@ -68,6 +74,10 @@ export default function Faction_Ship_Card(faction: any) {
                     body_style: "text-zinc-700 dark:text-zinc-300 text-base text-center",
                     button_style: "w-11/12 rounded-lg bg-neutral-300 dark:bg-neutral-700 hover:bg-neutral-400 dark:hover:bg-neutral-600 shadow duration-300",
                     text_bg: "",
+                    dd_btn_style: "px-2 py-1 my-2 inline-flex items-center rounded bg-neutral-300 hover:bg-neutral-400 dark:bg-neutral-700 dark:hover:bg-neutral-600 duration-300 text-center",
+                    dd_list_btn_style: "flex justify-center rounded px-2 py-1 inline-flex w-full items-center bg-neutral-300 hover:bg-neutral-400 dark:bg-neutral-700 dark:hover:bg-neutral-600 duration-300 text-center",
+                    dd_list_bg_style: "z-10 rounded-lg w-30  px-2 py-2 bg-neutral-300 dark:bg-neutral-700 border border-gray-400 dark:border-gray-900",
+                    dd_list_position: "flex justify-center",
                 }
             );
 
@@ -75,6 +85,24 @@ export default function Faction_Ship_Card(faction: any) {
             let count = 0;
             for (count = 0; count < shipdata.data.data.length; count++) {
                 const buffer = count
+
+                if (type != "All Type") {
+                    if (type == "AE") { if (shipdata.data.data[buffer].type != "AE") continue }
+                    else if (type == "AR") { if (shipdata.data.data[buffer].type != "AR") continue }
+                    else if (type == "BB") { if (shipdata.data.data[buffer].type != "BB") continue }
+                    else if (type == "BC") { if (shipdata.data.data[buffer].type != "BC") continue }
+                    else if (type == "BM") { if (shipdata.data.data[buffer].type != "BM") continue }
+                    else if (type == "CA") { if (shipdata.data.data[buffer].type != "CA") continue }
+                    else if (type == "CB") { if (shipdata.data.data[buffer].type != "CB") continue }
+                    else if (type == "CL") { if (shipdata.data.data[buffer].type != "CL") continue }
+                    else if (type == "CV") { if (shipdata.data.data[buffer].type != "CV") continue }
+                    else if (type == "CVL") { if (shipdata.data.data[buffer].type != "CVL") continue }
+                    else if (type == "DD") { if (shipdata.data.data[buffer].type != "DD") continue }
+                    else if (type == "IX") { if (shipdata.data.data[buffer].type != "IX") continue }
+                    else if (type == "SS") { if (shipdata.data.data[buffer].type != "SS") continue }
+                    else if (type == "SSV") { if (shipdata.data.data[buffer].type != "SSV") continue }
+                }
+
                 ship_list.push(
                     <div className="flex justify-center">
                         <div className={card_style.button_style}>
@@ -100,7 +128,39 @@ export default function Faction_Ship_Card(faction: any) {
                 )
             }
 
-            return (
+            return (<div>
+                <div className={card_style.position}>
+                    <div className={card_style.shape + " relative"}>
+                        <div className="flex justify-center">
+                            <h1 className={card_style.title_style}>ค้นหาเรือ</h1>
+                        </div>
+                        <div className={card_style.body_style}>
+                            <div>
+                                <button className={card_style.dd_btn_style} onClick={handleDropDown}>{type}<svg aria-hidden="true" className="w-4 h-4 ml-1" fill="gray" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                                <div className={isDropdown ? "block flex justify-center absolute top-full left-1/2 transform -translate-x-1/2 " : "hidden"}>
+                                    <ul className={card_style.dd_list_bg_style} aria-labelledby="dropdownMenuButton1">
+                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("All Type"),setDropdown(false)}}>All Type</button></li>
+                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("AE"),setDropdown(false)}}>AE</button></li>
+                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("AR"),setDropdown(false)}}>AR</button></li>
+                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("BB"),setDropdown(false)}}>BB</button></li>
+                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("BC"),setDropdown(false)}}>BC</button></li>
+                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("BM"),setDropdown(false)}}>BM</button></li>
+                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("CA"),setDropdown(false)}}>CA</button></li>
+                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("CB"),setDropdown(false)}}>CB</button></li>
+                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("CL"),setDropdown(false)}}>CL</button></li>
+                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("CV"),setDropdown(false)}}>CV</button></li>
+                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("CVL"),setDropdown(false)}}>CVL</button></li>
+                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("DD"),setDropdown(false)}}>DD</button></li>
+                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("IX"),setDropdown(false)}}>IX</button></li>
+                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("SS"),setDropdown(false)}}>SS</button></li>
+                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("SSV"),setDropdown(false)}}>SSV</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br></br>
                 <div className={card_style.position}>
                     <div className={card_style.shape}>
                         <div className="flex justify-center">
@@ -112,6 +172,7 @@ export default function Faction_Ship_Card(faction: any) {
                         <br></br>
                     </div>
                 </div>
+            </div>
             )
         }
     } catch (err) {
