@@ -82,13 +82,13 @@ export default function Faction_Ship_Card(faction: any) {
                                 <Link className={card_style.body_style} href={"/ship/" + shipdata.data.data[buffer].name}>
                                     <div className="flex justify-start items-center w-full">
                                         <img src={"/images/type/" + shipdata.data.data[buffer].type + ".png"} alt='type image' width="50" />
-                                        <div className="inline-block rounded bg-neutral-400 dark:bg-neutral-600 w-full ">
-                                            <p>&nbsp;{shipdata.data.data[buffer].name}</p>
+                                        <div className="truncate inline-block rounded bg-neutral-400 dark:bg-neutral-600 w-full">
+                                            <p className="max-w-fit">&nbsp;{shipdata.data.data[buffer].name}</p>
                                         </div>
                                     </div>
                                     <div>
                                         {shipdata.data.data[buffer].chibi != null ? <>
-                                            <div className="w-full flex justify-center items-center aspect-video">
+                                            <div className="w-full flex justify-center items-center aspect-square md:aspect-video">
                                                 <img src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.data[buffer].chibi} alt='ship chibi image' />
                                             </div></> : <></>
                                         }
