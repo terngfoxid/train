@@ -6,6 +6,7 @@ export default function Faction_Ship_Card(faction: any) {
     const [shipdata, setShipdata] = useState({ data: { error: null, data: [{ name: null, type: null, chibi: null }] } });
     const [type, setType] = useState("All Type")
     const [isDropdown, setDropdown] = useState(false);
+    const [search, setSearch] = useState("")
 
     const handleDropDown = () => {
         setDropdown(!isDropdown);
@@ -76,8 +77,11 @@ export default function Faction_Ship_Card(faction: any) {
                     text_bg: "",
                     dd_btn_style: "px-2 py-1 my-2 inline-flex items-center rounded bg-neutral-300 hover:bg-neutral-400 dark:bg-neutral-700 dark:hover:bg-neutral-600 duration-300 text-center",
                     dd_list_btn_style: "flex justify-center rounded px-2 py-1 inline-flex w-full items-center bg-neutral-300 hover:bg-neutral-400 dark:bg-neutral-700 dark:hover:bg-neutral-600 duration-300 text-center",
-                    dd_list_bg_style: "z-10 rounded-lg w-30  px-2 py-2 bg-neutral-300 dark:bg-neutral-700 border border-gray-400 dark:border-gray-900",
+                    dd_list_bg_style: "z-10 rounded-lg w-28 px-2 py-2 bg-neutral-300 dark:bg-neutral-700 border border-gray-400 dark:border-gray-900",
                     dd_list_position: "flex justify-center",
+                    input_style: "block px-2 py-1 my-2 w-full z-20 text-sm text-gray-800 bg-gray-50 rounded-l-lg border-l-gray-400 border-l-2 border border-gray-400 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-600 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-300 dark:text-neutral-100 dark:focus:border-blue-500",
+                    input_button: "top-0 right-0 px-1 py-1 my-2 z-30 text-sm font-medium text-white bg-neutral-500 rounded-r-lg border border-gray-600 hover:bg-gray-400 focus:ring-1 focus:outline-none focus:ring-blue-300 dark:bg-neutral-700 dark:hover:bg-gray-600 dark:focus:ring-blue-800",
+                    setfocus_ship: "focus:border-2 focus:border-blue-300",
                 }
             );
 
@@ -105,9 +109,9 @@ export default function Faction_Ship_Card(faction: any) {
 
                 ship_list.push(
                     <div className="flex justify-center">
-                        <div className={card_style.button_style}>
-                            <div className="">
-                                <Link className={card_style.body_style} href={"/ship/" + shipdata.data.data[buffer].name}>
+                        <button className={card_style.button_style +""+card_style.setfocus_ship}>
+                            <div>
+                                <Link id={(shipdata.data.data[buffer].name + "").toLowerCase()} className={card_style.body_style} href={"/ship/" + shipdata.data.data[buffer].name}>
                                     <div className="flex justify-start items-center w-full">
                                         <img src={"/images/type/" + shipdata.data.data[buffer].type + ".png"} alt='type image' width="50" />
                                         <div className="truncate inline-block rounded bg-neutral-400 dark:bg-neutral-600 w-full">
@@ -123,39 +127,79 @@ export default function Faction_Ship_Card(faction: any) {
                                     </div>
                                 </Link>
                             </div>
-                        </div>
+                        </button>
                     </div>
                 )
             }
 
+            const searchFunction = (event: { preventDefault: () => void; }) => {
+                event.preventDefault();
+                for (count = 0; count < shipdata.data.data.length; count++) {
+                    const buffer = count
+                    if (search.toLowerCase() == (shipdata.data.data[buffer].name + "").toLowerCase()) {
+                        var access = document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase());
+                        if (access != null) access.scrollIntoView({ behavior: 'smooth' });
+                        document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.focus();
+                        return;
+                    }
+                }
+
+                if (document.body.textContent != null) {
+                    if (document.body.textContent.toLowerCase().includes(search.toLowerCase())) {
+                        for (count = 0; count < shipdata.data.data.length; count++) {
+                            const buffer = count
+                            if (document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.textContent?.toLowerCase().includes(search.toLowerCase())) {
+                                var access = document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase());
+                                if (access != null) access.scrollIntoView({ behavior: 'smooth' });
+                                document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.focus();
+                                return;
+                            }
+                        }
+                    }
+                }
+
+
+                return;
+            };
+
             return (<div>
                 <div className={card_style.position}>
-                    <div className={card_style.shape + " relative"}>
+                    <div className={card_style.shape}>
                         <div className="flex justify-center">
                             <h1 className={card_style.title_style}>ค้นหาเรือ</h1>
                         </div>
                         <div className={card_style.body_style}>
-                            <div>
-                                <button className={card_style.dd_btn_style} onClick={handleDropDown}>{type}<svg aria-hidden="true" className="w-4 h-4 ml-1" fill="gray" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
-                                <div className={isDropdown ? "block flex justify-center absolute top-full left-1/2 transform -translate-x-1/2 " : "hidden"}>
-                                    <ul className={card_style.dd_list_bg_style} aria-labelledby="dropdownMenuButton1">
-                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("All Type"),setDropdown(false)}}>All Type</button></li>
-                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("AE"),setDropdown(false)}}>AE</button></li>
-                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("AR"),setDropdown(false)}}>AR</button></li>
-                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("BB"),setDropdown(false)}}>BB</button></li>
-                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("BC"),setDropdown(false)}}>BC</button></li>
-                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("BM"),setDropdown(false)}}>BM</button></li>
-                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("CA"),setDropdown(false)}}>CA</button></li>
-                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("CB"),setDropdown(false)}}>CB</button></li>
-                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("CL"),setDropdown(false)}}>CL</button></li>
-                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("CV"),setDropdown(false)}}>CV</button></li>
-                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("CVL"),setDropdown(false)}}>CVL</button></li>
-                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("DD"),setDropdown(false)}}>DD</button></li>
-                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("IX"),setDropdown(false)}}>IX</button></li>
-                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("SS"),setDropdown(false)}}>SS</button></li>
-                                        <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => {setType("SSV"),setDropdown(false)}}>SSV</button></li>
-                                    </ul>
+                            <div className="flex justify-center">
+                                <div className="relative mx-2">
+                                    <button className={card_style.dd_btn_style} onClick={handleDropDown}>{type}<svg aria-hidden="true" className="w-4 h-4 ml-1" fill="gray" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                                    <div className={isDropdown ? "block flex justify-center absolute top-full left-1/2 transform -translate-x-1/2 " : "hidden"}>
+                                        <ul className={card_style.dd_list_bg_style} aria-labelledby="dropdownMenuButton1">
+                                            <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => { setType("All Type"), setDropdown(false) }}>All Type</button></li>
+                                            <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => { setType("AE"), setDropdown(false) }}>AE</button></li>
+                                            <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => { setType("AR"), setDropdown(false) }}>AR</button></li>
+                                            <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => { setType("BB"), setDropdown(false) }}>BB</button></li>
+                                            <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => { setType("BC"), setDropdown(false) }}>BC</button></li>
+                                            <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => { setType("BM"), setDropdown(false) }}>BM</button></li>
+                                            <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => { setType("CA"), setDropdown(false) }}>CA</button></li>
+                                            <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => { setType("CB"), setDropdown(false) }}>CB</button></li>
+                                            <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => { setType("CL"), setDropdown(false) }}>CL</button></li>
+                                            <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => { setType("CV"), setDropdown(false) }}>CV</button></li>
+                                            <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => { setType("CVL"), setDropdown(false) }}>CVL</button></li>
+                                            <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => { setType("DD"), setDropdown(false) }}>DD</button></li>
+                                            <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => { setType("IX"), setDropdown(false) }}>IX</button></li>
+                                            <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => { setType("SS"), setDropdown(false) }}>SS</button></li>
+                                            <li className={card_style.dd_list_position}><button type="button" className={card_style.dd_list_btn_style} onClick={event => { setType("SSV"), setDropdown(false) }}>SSV</button></li>
+                                        </ul>
+                                    </div>
                                 </div>
+                                <form id="searchform" className="flex justify-center w-1/2" onSubmit={searchFunction}>
+                                    <div className="flex justify-center w-full">
+                                        <input type="search" id="searchtext" className={card_style.input_style} required onChange={event => { setSearch(event.currentTarget.value) }} placeholder="EX.Yorktown II -> york ,town ,YoRkTo"></input>
+                                        <button id="searchbutton" type="submit" className={card_style.input_button}>
+                                            <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
