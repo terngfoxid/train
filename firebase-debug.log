@@ -1,0 +1,32 @@
+[debug] [2023-01-17T15:05:36.526Z] ----------------------------------------------------------------------
+[debug] [2023-01-17T15:05:36.527Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\terng\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-01-17T15:05:36.528Z] CLI Version:   11.20.0
+[debug] [2023-01-17T15:05:36.528Z] Platform:      win32
+[debug] [2023-01-17T15:05:36.528Z] Node Version:  v18.12.1
+[debug] [2023-01-17T15:05:36.529Z] Time:          Tue Jan 17 2023 22:05:36 GMT+0700 (Indochina Time)
+[debug] [2023-01-17T15:05:36.529Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-17T15:05:36.585Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-17T15:05:36.585Z] > authorizing via signed-in user (terngfoxid@gmail.com)
+[debug] [2023-01-17T15:05:36.585Z] [iam] checking project azur-lane-guide for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-01-17T15:05:36.587Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/azur-lane-guide:testIamPermissions [none]
+[debug] [2023-01-17T15:05:36.587Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/azur-lane-guide:testIamPermissions x-goog-quota-user=projects/azur-lane-guide
+[debug] [2023-01-17T15:05:36.588Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/azur-lane-guide:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-01-17T15:05:37.750Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/azur-lane-guide:testIamPermissions 200
+[debug] [2023-01-17T15:05:37.751Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/azur-lane-guide:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-01-17T15:05:37.752Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/azur-lane-guide [none]
+[debug] [2023-01-17T15:05:38.121Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/azur-lane-guide 200
+[debug] [2023-01-17T15:05:38.121Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/azur-lane-guide {"projectId":"azur-lane-guide","projectNumber":"416897764300","displayName":"Azur Lane Guide","name":"projects/azur-lane-guide","resources":{"hostingSite":"azur-lane-guide"},"state":"ACTIVE","etag":"1_6f3df3d6-5937-46be-9be5-4cb9ff97b60c"}
+[debug] [2023-01-17T15:05:40.599Z] defaultcredentials: writing to file C:\Users\terng\AppData\Roaming\firebase\terngfoxid_gmail_com_application_default_credentials.json
+[debug] [2023-01-17T15:05:40.601Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/azur-lane-guide/sites pageToken=&pageSize=10
+[debug] [2023-01-17T15:05:41.376Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/azur-lane-guide/sites 200
+[debug] [2023-01-17T15:05:41.377Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/azur-lane-guide/sites {"sites":[{"name":"projects/azur-lane-guide/sites/azur-lane-guide","defaultUrl":"https://azur-lane-guide.web.app","appId":"1:416897764300:web:ea64fac7da10535ccfab69","type":"DEFAULT_SITE"}]}
+[debug] [2023-01-17T15:05:41.377Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:416897764300:web:ea64fac7da10535ccfab69/config [none]
+[debug] [2023-01-17T15:05:42.753Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:416897764300:web:ea64fac7da10535ccfab69/config 200
+[debug] [2023-01-17T15:05:42.753Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:416897764300:web:ea64fac7da10535ccfab69/config {"projectId":"azur-lane-guide","appId":"1:416897764300:web:ea64fac7da10535ccfab69","storageBucket":"azur-lane-guide.appspot.com","apiKey":"AIzaSyCc6M0sxKDlS7DYe5tA36SPUwr4eequ2i8","authDomain":"azur-lane-guide.firebaseapp.com","messagingSenderId":"416897764300","measurementId":"G-L4CJGVFV5D"}
+[debug] [2023-01-17T15:06:03.303Z] TypeError: Cannot read properties of null (reading 'toString')
+    at ɵcodegenFunctionsDirectory (C:\Users\terng\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\next\index.js:220:18)
+    at async prepareFrameworks (C:\Users\terng\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:305:84)
+    at async deploy (C:\Users\terng\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:53:13)
+[error] 
+[error] Error: An unexpected error has occurred.
