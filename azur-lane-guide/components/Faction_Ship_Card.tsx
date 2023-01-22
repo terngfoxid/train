@@ -81,7 +81,6 @@ export default function Faction_Ship_Card(faction: any) {
                     dd_list_position: "flex justify-center",
                     input_style: "block px-2 py-1 my-2 w-full z-20 text-sm text-gray-800 bg-gray-50 rounded-l-lg border-l-gray-400 border-l-2 border border-gray-400 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-600 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-300 dark:text-neutral-100 dark:focus:border-blue-500",
                     input_button: "top-0 right-0 px-1 py-1 my-2 z-30 text-sm font-medium text-white bg-neutral-500 rounded-r-lg border border-gray-600 hover:bg-gray-400 focus:ring-1 focus:outline-none focus:ring-blue-300 dark:bg-neutral-700 dark:hover:bg-gray-600 dark:focus:ring-blue-800",
-                    setfocus_ship: "focus:border-2 focus:border-blue-300",
                 }
             );
 
@@ -109,9 +108,9 @@ export default function Faction_Ship_Card(faction: any) {
 
                 ship_list.push(
                     <div className="flex justify-center">
-                        <button className={card_style.button_style +""+card_style.setfocus_ship}>
+                        <div id={(shipdata.data.data[buffer].name + "").toLowerCase()} className={card_style.button_style}>
                             <div>
-                                <Link id={(shipdata.data.data[buffer].name + "").toLowerCase()} className={card_style.body_style} href={"/ship/" + shipdata.data.data[buffer].name}>
+                                <Link className={card_style.body_style} href={"/ship/" + shipdata.data.data[buffer].name}>
                                     <div className="flex justify-start items-center w-full">
                                         <img src={"/images/type/" + shipdata.data.data[buffer].type + ".png"} alt='type image' width="50" />
                                         <div className="truncate inline-block rounded bg-neutral-400 dark:bg-neutral-600 w-full">
@@ -127,19 +126,28 @@ export default function Faction_Ship_Card(faction: any) {
                                     </div>
                                 </Link>
                             </div>
-                        </button>
+                        </div>
                     </div>
                 )
             }
 
             const searchFunction = (event: { preventDefault: () => void; }) => {
                 event.preventDefault();
+
+                for (count = 0; count < shipdata.data.data.length; count++) {
+                    const buffer = count
+                    document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.classList.remove("border-2")
+                    document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.classList.remove("border-red-500")
+                }
+
                 for (count = 0; count < shipdata.data.data.length; count++) {
                     const buffer = count
                     if (search.toLowerCase() == (shipdata.data.data[buffer].name + "").toLowerCase()) {
                         var access = document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase());
                         if (access != null) access.scrollIntoView({ behavior: 'smooth' });
                         document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.focus();
+                        document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.classList.add("border-2")
+                        document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.classList.add("border-red-500")
                         return;
                     }
                 }
@@ -152,6 +160,8 @@ export default function Faction_Ship_Card(faction: any) {
                                 var access = document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase());
                                 if (access != null) access.scrollIntoView({ behavior: 'smooth' });
                                 document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.focus();
+                                document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.classList.add("border-2")
+                                document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.classList.add("border-red-500")
                                 return;
                             }
                         }
