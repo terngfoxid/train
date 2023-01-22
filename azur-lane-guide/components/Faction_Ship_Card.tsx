@@ -107,7 +107,7 @@ export default function Faction_Ship_Card(faction: any) {
                 }
 
                 ship_list.push(
-                    <div className="flex justify-center">
+                    <div id={(shipdata.data.data[buffer].name + "_box").toLowerCase()} className="flex justify-center">
                         <div id={(shipdata.data.data[buffer].name + "").toLowerCase()} className={card_style.button_style}>
                             <div>
                                 <Link className={card_style.body_style} href={"/ship/" + shipdata.data.data[buffer].name}>
@@ -133,12 +133,14 @@ export default function Faction_Ship_Card(faction: any) {
 
             const searchFunction = (event: { preventDefault: () => void; }) => {
                 event.preventDefault();
-
+                
                 for (count = 0; count < shipdata.data.data.length; count++) {
                     const buffer = count
                     document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.classList.remove("border-2")
                     document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.classList.remove("border-red-500")
+                    document.getElementById((shipdata.data.data[buffer].name + "_box").toLowerCase())?.classList.remove("hidden")
                 }
+                if((search ==null) ||(search == "")) return;
 
                 for (count = 0; count < shipdata.data.data.length; count++) {
                     const buffer = count
@@ -165,9 +167,8 @@ export default function Faction_Ship_Card(faction: any) {
                                     move = true;
                                 }
                                 document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.focus();
-                                document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.classList.add("border-2")
-                                document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.classList.add("border-red-500")
                             }
+                            else { document.getElementById((shipdata.data.data[buffer].name + "_box").toLowerCase())?.classList.add("hidden") }
                         }
                     }
                 }
@@ -208,7 +209,7 @@ export default function Faction_Ship_Card(faction: any) {
                                 </div>
                                 <form id="searchform" className="flex justify-center w-1/2" onSubmit={searchFunction}>
                                     <div className="flex justify-center w-full">
-                                        <input type="search" id="searchtext" className={card_style.input_style} required onChange={event => { setSearch(event.currentTarget.value) }} placeholder="EX.Yorktown II -> york ,town ,YoRkTo"></input>
+                                        <input type="search" id="searchtext" className={card_style.input_style} onChange={event => { setSearch(event.currentTarget.value) }} placeholder="EX.Yorktown II -> york ,town ,YoRkTo"></input>
                                         <button id="searchbutton" type="submit" className={card_style.input_button}>
                                             <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                                         </button>
