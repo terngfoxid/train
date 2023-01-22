@@ -154,15 +154,19 @@ export default function Faction_Ship_Card(faction: any) {
 
                 if (document.body.textContent != null) {
                     if (document.body.textContent.toLowerCase().includes(search.toLowerCase())) {
+                        let move = false;
                         for (count = 0; count < shipdata.data.data.length; count++) {
                             const buffer = count
+                            
                             if (document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.textContent?.toLowerCase().includes(search.toLowerCase())) {
                                 var access = document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase());
-                                if (access != null) access.scrollIntoView({ behavior: 'smooth' });
+                                if ((access != null )&&(move == false)){
+                                    access.scrollIntoView({ behavior: 'smooth' });
+                                    move = true;
+                                }
                                 document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.focus();
                                 document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.classList.add("border-2")
                                 document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.classList.add("border-red-500")
-                                return;
                             }
                         }
                     }
