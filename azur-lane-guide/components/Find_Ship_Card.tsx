@@ -5,9 +5,9 @@ export default function Find_Ship_Card() {
     const card_style = (
         {
             title_style: 'text-zinc-700 dark:text-zinc-300 text-2xl font-bold text-center',
-            shape: "w-11/12 md:w-5/6 2xl:w-3/4 rounded-lg shadow-md border bg-neutral-200 border-gray-300 dark:border-gray-700 dark:bg-neutral-800",
+            shape: "w-11/12 md:w-11/12 lg:w-11/12 xl:w-5/6 2xl:w-3/4 rounded-lg shadow-md border bg-neutral-200 border-gray-300 dark:border-gray-700 dark:bg-neutral-800",
             position: "flex justify-center",
-            body_style: "py-2 text-zinc-700 dark:text-zinc-300 text-lg md:text-2xl text-center",
+            body_style: "py-2 text-zinc-700 dark:text-zinc-300 text-lg md:text-sm lg:text-xl xl:text-2xl text-center",
             button_style: "cursor-pointer w-full h-full py-2 rounded hover:bg-neutral-300 dark:hover:bg-neutral-700 flex flex justify-start items-center duration-300",
         }
     );

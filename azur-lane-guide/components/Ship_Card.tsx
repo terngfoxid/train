@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Loading from "./overlay/Loading";
 import Chibi from "./overlay/Chibi";
+import 'animate.css';
 
 export default function Ship_Card(ship: any) {
     const [shipdata, setShipdata] = useState({
@@ -162,9 +163,9 @@ export default function Ship_Card(ship: any) {
                 {(shipdata.data.gear != null) ? <>
                     <br></br>
                     <div id="shipdata2" className={card_style.position}>
-                        <div className={card_style.shape+ " relative"}>
+                        <div className={card_style.shape + " relative"}>
                             <br></br>
-                            <div className={card_style.body_style +" z-10"}>
+                            <div className={card_style.body_style + " z-10"}>
                                 <p className="pb-4">อุปกรณ์สวมใส่แนะนำ</p>
                                 <div className="flex justify-center">
                                     <div className="w-11/12 md:w-11/12">
@@ -183,8 +184,14 @@ export default function Ship_Card(ship: any) {
                                 </div>
                             </div>
                             <br></br>
-                            <div className="absolute top-0 left-0 z-0 h-10">
+                            <div className="absolute top-0 right-0 z-0 h-10">
+                                <div className="animate__animated animate__fadeInRight animate__delay-1s">
 
+                                    {shipdata.data.type == "CV" ?
+                                        <><img className="w-1/3 md:w-full animate__animated animate__flash animate__delay-2s" src="/images/gear/Tenrai.png" alt={"aircraft picture"}></img></> : <></>
+                                    }
+                                    
+                                </div>
                             </div>
                         </div>
                     </div></> : <></>}
