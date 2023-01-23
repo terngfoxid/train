@@ -184,13 +184,13 @@ export default function Ship_Card(ship: any) {
                                 </div>
                             </div>
                             <br></br>
-                            <div className="absolute top-0 right-0 z-0 h-10">
-                                <div className="animate__animated animate__fadeInRight animate__delay-1s">
+                            <div className="absolute top-2 right-0 z-0 h-10 w-1/6 md:w-max">
+                                <div className="animate__animated animate__fadeInRight animate__delay-1s animate__slow">
 
                                     {shipdata.data.type == "CV" ?
-                                        <><img className="w-1/3 md:w-full animate__animated animate__flash animate__delay-2s" src="/images/gear/Tenrai.png" alt={"aircraft picture"}></img></> : <></>
+                                        <><img className="" src="/images/gear/Tenrai.png" alt={"aircraft picture"}></img></> : <></>
                                     }
-                                    
+
                                 </div>
                             </div>
                         </div>
