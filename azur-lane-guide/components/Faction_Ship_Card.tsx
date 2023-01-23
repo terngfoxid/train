@@ -91,20 +91,20 @@ export default function Faction_Ship_Card(faction: any) {
                 let hidden = ""
 
                 if (type != "All Type") {
-                    if (type == "AE") { if (shipdata.data.data[buffer].type != "AE") hidden=" hidden" }
-                    else if (type == "AR") { if (shipdata.data.data[buffer].type != "AR") hidden=" hidden" }
-                    else if (type == "BB") { if (shipdata.data.data[buffer].type != "BB") hidden=" hidden" }
-                    else if (type == "BC") { if (shipdata.data.data[buffer].type != "BC") hidden=" hidden" }
-                    else if (type == "BM") { if (shipdata.data.data[buffer].type != "BM") hidden=" hidden" }
-                    else if (type == "CA") { if (shipdata.data.data[buffer].type != "CA") hidden=" hidden" }
-                    else if (type == "CB") { if (shipdata.data.data[buffer].type != "CB") hidden=" hidden" }
-                    else if (type == "CL") { if (shipdata.data.data[buffer].type != "CL") hidden=" hidden" }
-                    else if (type == "CV") { if (shipdata.data.data[buffer].type != "CV") hidden=" hidden" }
-                    else if (type == "CVL") { if (shipdata.data.data[buffer].type != "CVL") hidden=" hidden" }
-                    else if (type == "DD") { if (shipdata.data.data[buffer].type != "DD") hidden=" hidden" }
-                    else if (type == "IX") { if (shipdata.data.data[buffer].type != "IX") hidden=" hidden" }
-                    else if (type == "SS") { if (shipdata.data.data[buffer].type != "SS") hidden=" hidden" }
-                    else if (type == "SSV") { if (shipdata.data.data[buffer].type != "SSV") hidden=" hidden" }
+                    if (type == "AE") { if ((shipdata.data.data[buffer].type != "AE")) hidden=" hidden" }
+                    else if (type == "AR") { if ((shipdata.data.data[buffer].type != "AR")) hidden=" hidden" }
+                    else if (type == "BB") { if ((shipdata.data.data[buffer].type != "BB")) hidden=" hidden" }
+                    else if (type == "BC") { if ((shipdata.data.data[buffer].type != "BC")) hidden=" hidden" }
+                    else if (type == "BM") { if ((shipdata.data.data[buffer].type != "BM")) hidden=" hidden" }
+                    else if (type == "CA") { if ((shipdata.data.data[buffer].type != "CA")) hidden=" hidden" }
+                    else if (type == "CB") { if ((shipdata.data.data[buffer].type != "CB")) hidden=" hidden" }
+                    else if (type == "CL") { if ((shipdata.data.data[buffer].type != "CL")) hidden=" hidden" }
+                    else if (type == "CV") { if ((shipdata.data.data[buffer].type != "CV")) hidden=" hidden" }
+                    else if (type == "CVL") { if ((shipdata.data.data[buffer].type != "CVL")) hidden=" hidden" }
+                    else if (type == "DD") { if ((shipdata.data.data[buffer].type != "DD")) hidden=" hidden" }
+                    else if (type == "IX") { if ((shipdata.data.data[buffer].type != "IX")) hidden=" hidden" }
+                    else if (type == "SS") { if ((shipdata.data.data[buffer].type != "SS")) hidden=" hidden" }
+                    else if (type == "SSV") { if ((shipdata.data.data[buffer].type != "SSV")) hidden=" hidden" }
                 }
 
                 ship_list.push(
