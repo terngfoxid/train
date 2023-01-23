@@ -57,7 +57,7 @@ export default function Home_Card() {
                                 <br className="md:hidden"></br>
                                 <div className="flex justify-center items-center">
                                     <div className="w-11/12">
-                                        <img className="object-scale-down" src={"/images/Azur_Lane_English_Logo.webp"} alt="Azur Lane Logo"></img>
+                                        <img className="object-scale-down" src={"/images/AzurLane_Guide_TH_LOGO.webp"} alt="Azur Lane Logo"></img>
                                     </div>
                                 </div>
                             </div>
