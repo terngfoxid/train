@@ -187,7 +187,7 @@ export default function Ship_Card(ship: any) {
                             <div className="absolute top-2 right-0 z-0 h-10 w-1/6 md:w-max">
                                 <div className="animate__animated animate__fadeInRight animate__delay-1s animate__slow">
 
-                                    {shipdata.data.type == "CV" ?
+                                    {(shipdata.data.type == "CV") ?
                                         <><img className="" src="/images/gear/Tenrai.png" alt={"aircraft picture"}></img></> : <></>
                                     }
 
