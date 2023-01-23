@@ -52,8 +52,6 @@ export default function Ship() {
                     <br></br>
                     <Ship_Card ship={name} />
                     <br></br>
-                    <Test_Card />
-                    <br></br>
                 </main>
                 <Footer />
             </>

@@ -14,6 +14,7 @@ export default function Ship_Card(ship: any) {
             faction_short: null,
             fatesim: null,
             chibi: null,
+            gear: null,
         }
     });
 
@@ -158,6 +159,33 @@ export default function Ship_Card(ship: any) {
 
                 </div>
 
+                {(shipdata.data.gear != null) ? <>
+                    <br></br>
+                    <div id="shipdata2" className={card_style.position}>
+                        <div className={card_style.shape}>
+                            <br></br>
+                            <div className={card_style.body_style}>
+                                <p className="pb-4">อุปกรณ์สวมใส่แนะนำ</p>
+                                <div className="flex justify-center">
+                                    <div className="w-11/12 md:w-11/12">
+                                        <img className="cursor-zoom-in object-scale-down" src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.gear} alt={shipdata.data.name + " picture"}
+                                            onClick={() => {
+                                                document.getElementById("present3")?.classList.remove("hidden")
+                                                document.getElementById("shipchibi")?.classList.add("hidden")
+                                                document.getElementById("shipdata")?.classList.add("hidden")
+                                                document.getElementById("shipdata2")?.classList.add("hidden")
+                                                document.body.classList.remove("overflow-x-hidden");
+                                                document.body.classList.add("w-max");
+                                            }}
+                                        >
+                                        </img>
+                                    </div>
+                                </div>
+                            </div>
+                            <br></br>
+                        </div>
+                    </div></> : <></>}
+
                 {(shipdata.data.skill != null) ? <>
                     <div id="present0" className="hidden bg-gray-900 w-max"
                         onClick={() => {
@@ -198,6 +226,20 @@ export default function Ship_Card(ship: any) {
                         }}
                     >
                         <img className="cursor-zoom-out object-scale-down" src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.fatesim} alt={shipdata.data.name + " picture"}></img>
+                    </div></> : <></>}
+
+                {(shipdata.data.gear != null) ? <>
+                    <div id="present3" className="hidden bg-gray-900 w-max"
+                        onClick={() => {
+                            document.getElementById("present3")?.classList.add("hidden")
+                            document.getElementById("shipchibi")?.classList.remove("hidden")
+                            document.getElementById("shipdata")?.classList.remove("hidden")
+                            document.getElementById("shipdata2")?.classList.remove("hidden")
+                            document.body.classList.add("overflow-x-hidden");
+                            document.body.classList.remove("w-max");
+                        }}
+                    >
+                        <img className="cursor-zoom-out object-scale-down" src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.gear} alt={shipdata.data.name + " picture"}></img>
                     </div></> : <></>}
 
                 {shipdata.data.chibi != null ? <>
