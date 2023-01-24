@@ -35,7 +35,7 @@ export default function Ship_Card(ship: any) {
 
         const buffername = ship.ship.replaceAll("_", " ").toLowerCase();
 
-        const localdata = localStorage.getItem("" + ship.ship)
+        const localdata = localStorage.getItem("" + buffername)
         if ((localdata != null) && (JSON.parse(localdata).name == buffername)) {
             setShipdata({ data: JSON.parse(localdata) })
         }
