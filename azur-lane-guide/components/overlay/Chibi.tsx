@@ -33,11 +33,11 @@ export default function Chibi(chibi: any) {
                 <div>
                         {
                             state == 1 ?
-                            <><div className={"md:my-10 h-max "+chibi_style.chat_style}><p className="px-1 py-1">{"กดคลิกที่รูปเพื่อขยายขนาดได้นะ"}</p></div></>
+                            <><div className={"md:my-5 h-max "+chibi_style.chat_style}><p className="px-1 py-1">{"กดคลิกที่รูปเพื่อขยายขนาดได้นะ"}</p></div></>
                             : state == 2 ?
-                            <><div className={"md:my-10 h-max "+chibi_style.chat_style}><p className="px-1 py-1">{"ถ้าลำใหนมีเกียร์แนะนำ จะอยู่ส่วนด้านล่างสุด"}</p></div></> 
+                            <><div className={"md:my-5 h-max "+chibi_style.chat_style}><p className="px-1 py-1">{"ถ้าลำใหนมีเกียร์แนะนำ จะอยู่ส่วนด้านล่างสุด"}</p></div></> 
                             : state == 3 ?
-                            <><div className={"md:my-10 h-max "+chibi_style.chat_style}><p className="px-1 py-1">{"ปิดกล่องข้อความ กดที่ตัวจิบิ"}</p></div></>
+                            <><div className={"md:my-5 h-max "+chibi_style.chat_style}><p className="px-1 py-1">{"ปิดกล่องข้อความ กดที่ตัวจิบิ"}</p></div></>
                             :<></>
                         }
                 </div>
