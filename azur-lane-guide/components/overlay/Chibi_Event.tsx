@@ -33,11 +33,11 @@ export default function Chibi_Event(chibi: any) {
                 <div className="">
                         {
                             state == 1 ?
-                            <><div className={"mt-8 md:mt-16 h-max "+chibi_style.chat_style}><p className="px-1 py-1">{"1"}</p></div></>
+                            <><div className={"mt-8 md:mt-16 h-max "+chibi_style.chat_style}><p className="px-1 py-1">{"กดคลิกที่รูปเพื่อขยายขนาดได้นะ"}</p></div></>
                             : state == 2 ?
-                            <><div className={"mt-8 md:mt-16 h-max "+chibi_style.chat_style}><p className="px-1 py-1">{"2"}</p></div></> 
+                            <><div className={"mt-8 md:mt-16 h-max "+chibi_style.chat_style}><p className="px-1 py-1">{"ด่านแนะนำจะอยู่ล่าง"}</p></div></> 
                             : state == 3 ?
-                            <><div className={"mt-8 md:mt-16 h-max "+chibi_style.chat_style}><p className="px-1 py-1">{"3"}</p></div></>
+                            <><div className={"mt-8 md:mt-16 h-max "+chibi_style.chat_style}><p className="px-1 py-1">{"ปิดกล่องข้อความ กดที่ตัวจิบิ"}</p></div></>
                             :<></>
                         }
                 </div>

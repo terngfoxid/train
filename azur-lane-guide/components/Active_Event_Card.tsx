@@ -3,7 +3,6 @@ import Loading from "./overlay/Loading";
 import Chibi_Event from "./overlay/Chibi_Event";
 import 'animate.css';
 import Link from "next/link";
-import { buffer } from "stream/consumers";
 
 export default function Active_Event_Card(ship: any) {
 
@@ -93,8 +92,8 @@ export default function Active_Event_Card(ship: any) {
                     </div>
                 </div>
                 <br></br>
-                
-                <div id="shipdata" className={card_style.position}>
+
+                <div id="shipdata2" className={card_style.position}>
                     <div className={card_style.shape}>
                         <div className="flex justify-center">
                         <h1 className={card_style.title_style}>เรือใหม่</h1>
@@ -105,15 +104,38 @@ export default function Active_Event_Card(ship: any) {
                         <br></br>
                     </div>
                 </div>
-                <br></br>
 
-                <div id="shipdata" className={card_style.position}>
+                <br></br>
+                <div id="shipdata3" className={card_style.position}>
                     <div className={card_style.shape}>
-                        <div className="flex justify-center">
-                        <h1 className={card_style.title_style}>เทส123</h1>
-                        </div>
+                        <img className="cursor-zoom-in object-scale-down rounded-lg" src={"https://drive.google.com/uc?export=view&id=" + eventdata.data.event_guide} alt={eventdata.data.banner + " picture"}
+                            onClick={() => {
+                                document.getElementById("present0")?.classList.remove("hidden")
+                                document.getElementById("shipchibi")?.classList.add("hidden")
+                                document.getElementById("shipdata")?.classList.add("hidden")
+                                document.getElementById("shipdata2")?.classList.add("hidden")
+                                document.getElementById("shipdata3")?.classList.add("hidden")
+                                document.body.classList.remove("overflow-x-hidden");
+                                document.body.classList.add("w-max");
+                            }}
+                        ></img>
                     </div>
                 </div>
+
+                {(eventdata.data.event_guide != null) ? <>
+                    <div id="present0" className="hidden bg-gray-900 w-max"
+                        onClick={() => {
+                            document.getElementById("present0")?.classList.add("hidden")
+                            document.getElementById("shipchibi")?.classList.remove("hidden")
+                            document.getElementById("shipdata")?.classList.remove("hidden")
+                            document.getElementById("shipdata2")?.classList.remove("hidden")
+                            document.getElementById("shipdata3")?.classList.remove("hidden")
+                            document.body.classList.add("overflow-x-hidden");
+                            document.body.classList.remove("w-max");
+                        }}
+                    >
+                        <img className="cursor-zoom-out object-scale-down" src={"https://drive.google.com/uc?export=view&id=" + eventdata.data.event_guide} alt={"Guide picture"}></img>
+                    </div></> : <></>}
 
                 {eventdata.data.chibi != null ? <>
                     <Chibi_Event chibi={eventdata.data.chibi} />
