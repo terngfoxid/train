@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import Loading from "./overlay/Loading";
 import Chibi from "./overlay/Chibi";
 import 'animate.css';
+import Link from "next/link";
+
+
 
 export default function Ship_Card(ship: any) {
     const [shipdata, setShipdata] = useState({
@@ -16,6 +19,7 @@ export default function Ship_Card(ship: any) {
             fatesim: null,
             chibi: null,
             gear: null,
+            history: null,
         }
     });
 
@@ -88,6 +92,9 @@ export default function Ship_Card(ship: any) {
                 shape: "w-11/12 md:w-5/6 2xl:w-2/3 rounded-lg shadow-md border bg-neutral-200 border-gray-300 dark:border-gray-700 dark:bg-neutral-800",
                 position: "flex justify-center",
                 body_style: "text-zinc-600 dark:text-zinc-400 text-2xl text-center",
+                mrt_shape: "hover:scale-110 overflow-hidden group relative w-11/12 rounded-lg shadow-md border bg-neutral-200 hover:bg-neutral-300 border-gray-300 dark:border-gray-800 dark:bg-neutral-800 dark:hover:bg-neutral-700 border-b-4 border-t-1 border-l-1 border-r-1 duration-300",
+                image_style: "w-full rounded-lg shadow-xl",
+                mrt_image_src: "/images/MRT 600x300.png",
             }
         );
 
@@ -116,6 +123,7 @@ export default function Ship_Card(ship: any) {
                                                 document.getElementById("shipchibi")?.classList.add("hidden")
                                                 document.getElementById("shipdata")?.classList.add("hidden")
                                                 document.getElementById("shipdata2")?.classList.add("hidden")
+                                                document.getElementById("shipdata3")?.classList.add("hidden")
                                                 document.body.classList.remove("overflow-x-hidden");
                                                 document.body.classList.add("w-max");
                                             }}
@@ -131,6 +139,7 @@ export default function Ship_Card(ship: any) {
                                                 document.getElementById("shipchibi")?.classList.add("hidden")
                                                 document.getElementById("shipdata")?.classList.add("hidden")
                                                 document.getElementById("shipdata2")?.classList.add("hidden")
+                                                document.getElementById("shipdata3")?.classList.add("hidden")
                                                 document.body.classList.remove("overflow-x-hidden");
                                                 document.body.classList.add("w-max");
                                             }}
@@ -146,6 +155,7 @@ export default function Ship_Card(ship: any) {
                                                 document.getElementById("shipchibi")?.classList.add("hidden")
                                                 document.getElementById("shipdata")?.classList.add("hidden")
                                                 document.getElementById("shipdata2")?.classList.add("hidden")
+                                                document.getElementById("shipdata3")?.classList.add("hidden")
                                                 document.body.classList.remove("overflow-x-hidden");
                                                 document.body.classList.add("w-max");
                                             }}
@@ -176,6 +186,7 @@ export default function Ship_Card(ship: any) {
                                                 document.getElementById("shipchibi")?.classList.add("hidden")
                                                 document.getElementById("shipdata")?.classList.add("hidden")
                                                 document.getElementById("shipdata2")?.classList.add("hidden")
+                                                document.getElementById("shipdata3")?.classList.add("hidden")
                                                 document.body.classList.remove("overflow-x-hidden");
                                                 document.body.classList.add("w-max");
                                             }}
@@ -197,6 +208,36 @@ export default function Ship_Card(ship: any) {
                         </div>
                     </div></> : <></>}
 
+                {((shipdata.data.history != null) || (false)) ? <>
+                    <div id="shipdata3">
+                        <br></br>
+                        <div className="flex justify-center">
+                            <div className="w-full md:w-5/6 2xl:w-2/3">
+                                <div className='md:grid md:grid-cols-2'>
+                                    <div className='flex justify-center md:justify-start'>
+                                        <div>
+
+                                        </div>
+                                    </div>
+                                    <br className='block md:hidden'></br>
+                                    {(shipdata.data.history != null) ?
+                                        <div className='flex justify-center md:justify-end'>
+                                            <button className={card_style.mrt_shape}>
+                                                <Link href={shipdata.data.history} className="w-full" legacyBehavior>
+                                                    <a target="_blank">
+                                                        <img src={card_style.mrt_image_src} className={card_style.image_style} alt='Mr.T button image' />
+                                                    </a>
+                                                </Link>
+                                            </button>
+                                        </div> : <></>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </> : <></>
+                }
+
                 {(shipdata.data.skill != null) ? <>
                     <div id="present0" className="hidden bg-gray-900 w-max"
                         onClick={() => {
@@ -204,6 +245,7 @@ export default function Ship_Card(ship: any) {
                             document.getElementById("shipchibi")?.classList.remove("hidden")
                             document.getElementById("shipdata")?.classList.remove("hidden")
                             document.getElementById("shipdata2")?.classList.remove("hidden")
+                            document.getElementById("shipdata3")?.classList.remove("hidden")
                             document.body.classList.add("overflow-x-hidden");
                             document.body.classList.remove("w-max");
                         }}
@@ -218,6 +260,7 @@ export default function Ship_Card(ship: any) {
                             document.getElementById("shipchibi")?.classList.remove("hidden")
                             document.getElementById("shipdata")?.classList.remove("hidden")
                             document.getElementById("shipdata2")?.classList.remove("hidden")
+                            document.getElementById("shipdata3")?.classList.remove("hidden")
                             document.body.classList.add("overflow-x-hidden");
                             document.body.classList.remove("w-max");
                         }}
@@ -232,6 +275,7 @@ export default function Ship_Card(ship: any) {
                             document.getElementById("shipchibi")?.classList.remove("hidden")
                             document.getElementById("shipdata")?.classList.remove("hidden")
                             document.getElementById("shipdata2")?.classList.remove("hidden")
+                            document.getElementById("shipdata3")?.classList.remove("hidden")
                             document.body.classList.add("overflow-x-hidden");
                             document.body.classList.remove("w-max");
                         }}
@@ -246,6 +290,7 @@ export default function Ship_Card(ship: any) {
                             document.getElementById("shipchibi")?.classList.remove("hidden")
                             document.getElementById("shipdata")?.classList.remove("hidden")
                             document.getElementById("shipdata2")?.classList.remove("hidden")
+                            document.getElementById("shipdata3")?.classList.remove("hidden")
                             document.body.classList.add("overflow-x-hidden");
                             document.body.classList.remove("w-max");
                         }}
