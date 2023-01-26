@@ -39,7 +39,7 @@ export default function Home() {
           </div>
         </div>
 
-        <br></br>
+        <br className='hidden md:block'></br>
         <br></br>
 
         <div className='flex justify-center'>
