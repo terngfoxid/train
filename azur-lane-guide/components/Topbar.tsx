@@ -20,13 +20,13 @@ export default function Topbar() {
   //Menu Preset
   const menu_list = [];
   menu_list.push(
-    <li className='shadow md:shadow-none'><Link className={topbar_style.list_style} href="/">Home</Link></li>
+    <li className='shadow md:shadow-none'><Link className={topbar_style.list_style} href="/ship">ข้อมูลเรือ</Link></li>
   )
   menu_list.push(
-    <li className='shadow md:shadow-none'><Link className={topbar_style.list_style} href="/ship">Ship</Link></li>
+    <li className='shadow md:shadow-none'><Link className={topbar_style.list_style} href="/active_event">กิจกรรม</Link></li>
   )
   menu_list.push(
-    <li className='shadow md:shadow-none'><Link className={topbar_style.list_style} href="/contact">Contact</Link></li>
+    <li className='shadow md:shadow-none'><Link className={topbar_style.list_style} href="/contact">ผู้จัดทำ</Link></li>
   )
 
   return (

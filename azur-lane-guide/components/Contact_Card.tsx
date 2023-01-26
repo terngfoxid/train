@@ -24,7 +24,7 @@ export default function Contact_Card (){
             <p>Web Programer: <Link href="https://www.youtube.com/@SSTfoxide" className="px-2 rounded hover:bg-neutral-300 dark:hover:bg-neutral-700">SSTfoxide</Link></p>
             <br></br>
             <p>Framework:  Next.js</p>
-            <p>CSS:  Tailwind CSS</p>
+            <p>CSS:  Tailwind CSS + Animate.css</p>
           </div>
           <br></br>
         </div>
