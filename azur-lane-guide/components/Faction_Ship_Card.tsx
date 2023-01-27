@@ -211,7 +211,7 @@ export default function Faction_Ship_Card(faction: any) {
                                 <form id="searchform" className="flex justify-center w-1/2" onSubmit={searchFunction}>
                                     <div className="flex justify-center w-full">
                                         <input type="search" id="searchtext" className={card_style.input_style} onChange={event => { setSearch(event.currentTarget.value) }} placeholder="EX.Yorktown II -> york ,town ,YoRkTo"></input>
-                                        <button id="searchbutton" type="submit" className={card_style.input_button}>
+                                        <button id="searchbutton" type="submit" className={card_style.input_button} aria-label="search">
                                             <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                                         </button>
                                     </div>

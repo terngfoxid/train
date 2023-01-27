@@ -5,7 +5,8 @@ export default function Find_Ship_Card() {
     const card_style = (
         {
             title_style: 'text-zinc-700 dark:text-zinc-300 text-2xl font-bold text-center',
-            shape: "w-11/12 md:w-11/12 lg:w-11/12 xl:w-5/6 2xl:w-3/4 rounded-lg shadow-md border bg-neutral-200 border-gray-300 dark:border-gray-700 dark:bg-neutral-800",
+            shape: "bg-cover bg-center  w-11/12 md:w-11/12 lg:w-11/12 xl:w-5/6 2xl:w-3/4 rounded-lg shadow-md border bg-[url('/images/MainDayBG.png')] border-gray-300 dark:border-gray-700 dark:bg-[url('/images/MainTwilightBG.png')]",
+            //bg-neutral-200 dark:bg-neutral-800 test-bg.jpg bg-[url('/images/test-bg.jpg')] aspect-video\
             position: "flex justify-center",
             body_style: "py-2 text-zinc-700 dark:text-zinc-300 text-lg md:text-sm lg:text-xl xl:text-2xl text-center",
             button_style: "cursor-pointer w-full h-full py-2 rounded hover:bg-neutral-300 dark:hover:bg-neutral-700 flex flex justify-start items-center duration-300",
@@ -17,26 +18,20 @@ export default function Find_Ship_Card() {
         <div className={card_style.position}>
             <div className={card_style.shape}>
                 <br></br>
-                <h1 className={card_style.title_style}>
-                    <div className="md:flex md:justify-center md:items-center md:text-3xl">
-                        <p>ข้อมูลเรือ</p>
-                    </div>
-                </h1>
                 <br className=""></br>
                 <div className={card_style.body_style}>
-
-                    <h1 className={card_style.title_style}>
-                        <div className="md:flex md:justify-center md:items-center md:text-3xl">
-                            <p>Faction หลัก</p>
+                    <div className="flex justify-center items-center md:text-3xl">
+                        <div className='w-1/2 md:w-1/4 border border-[#ffe259]'>
+                            <img src="/images/Faction main.png" className={card_style.image_style} alt='image' />
                         </div>
-                    </h1>
+                    </div>
                     <br></br>
                     <div className='flex justify-center'>
                         <div className="w-5/6 md:w-full md:grid md:grid-cols-3 md:gap-y-2">
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#00d8ff]" href="/faction/Eagle Union">
-                                <img src="/images/faction/Faction Eagle Union 500x100.png" className={card_style.image_style} alt='button image' />  
+                                    <img src="/images/faction/Faction Eagle Union 500x100.png" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
@@ -44,7 +39,7 @@ export default function Find_Ship_Card() {
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#ffe259]" href="/faction/Royal Navy">
-                                <img src="/images/faction/Faction Royal Navy 500x100.png" className={card_style.image_style} alt='button image' />
+                                    <img src="/images/faction/Faction Royal Navy 500x100.png" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
@@ -52,7 +47,7 @@ export default function Find_Ship_Card() {
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center  hover:scale-110 duration-300 rounded border border-[#ed4264]" href="/faction/Sakura Empire">
-                                <img src="/images/faction/Faction Sakura Empire 500x100.png" className={card_style.image_style} alt='button image' />
+                                    <img src="/images/faction/Faction Sakura Empire 500x100.png" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
@@ -60,7 +55,7 @@ export default function Find_Ship_Card() {
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center  hover:scale-110 duration-300 rounded border border-[#ff1c23]" href="/faction/Iron Blood">
-                                <img src="/images/faction/Faction Iron Blood 500x100.png" className={card_style.image_style} alt='button image' />
+                                    <img src="/images/faction/Faction Iron Blood 500x100.png" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
@@ -68,7 +63,7 @@ export default function Find_Ship_Card() {
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#90f9c4]" href="/faction/Dragon Empery">
-                                <img src="/images/faction/Faction Dragon Empery 500x100.png" className={card_style.image_style} alt='button image' />
+                                    <img src="/images/faction/Faction Dragon Empery 500x100.png" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
@@ -76,7 +71,7 @@ export default function Find_Ship_Card() {
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#12d8fa]" href="/faction/Northern Parliament">
-                                <img src="/images/faction/Faction Northern Parliament 500x100.png" className={card_style.image_style} alt='button image' />
+                                    <img src="/images/faction/Faction Northern Parliament 500x100.png" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
@@ -139,13 +134,13 @@ export default function Find_Ship_Card() {
 
                         </div>
                     </div>
-
                     <br></br>
-                    <h1 className={card_style.title_style}>
-                        <div className="md:flex md:justify-center md:items-center md:text-3xl">
-                            <p>Faction เสริม</p>
+                    <br></br>
+                    <div className="flex justify-center items-center md:text-3xl">
+                        <div className='w-1/2 md:w-1/4 border border-[#ffe259]'>
+                            <img src="/images/Faction extra.png" className={card_style.image_style} alt='image' />
                         </div>
-                    </h1>
+                    </div>
                     <br></br>
 
                     <div className='flex justify-center'>
