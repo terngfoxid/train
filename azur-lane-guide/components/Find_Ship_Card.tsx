@@ -78,57 +78,24 @@ export default function Find_Ship_Card() {
                             <br className="md:hidden"></br>
 
                             <div className="flex justify-center">
-                                <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#ffe259]" href="/faction/Iris Libre">
-                                    <div className={card_style.button_style}>
-                                        <div className="flex justify-start items-center w-full ">
-                                            <p>&nbsp;&nbsp;&nbsp;</p>
-                                            <div className="hidden dark:block"><img src="/images/faction/Iris Libre Iv.webp" alt='faction image' width="50" /></div>
-                                            <div className="block dark:hidden"><img src="/images/faction/Iris Libre.png" alt='faction image' width="50" /></div>
-                                            <div className='w-full flex justify-center'>
-                                                <div className='w-11/12 flex justify-start'>
-                                                    <p>Iris Libre</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#fff83e]" href="/faction/Iris Libre">
+                                    <img src="/images/faction/Faction Iris Libre 500x100.png" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
                             <br className="md:hidden"></br>
 
                             <div className="flex justify-center">
-                                <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#ffe259]" href="/faction/Vichya Dominion">
-                                    <div className={card_style.button_style}>
-                                        <div className="flex justify-start items-center w-full ">
-                                            <p>&nbsp;&nbsp;&nbsp;</p>
-                                            <div className="hidden dark:block"><img src="/images/faction/Vichya Dominion Iv.webp" alt='faction image' width="50" /></div>
-                                            <div className="block dark:hidden"><img src="/images/faction/Vichya Dominion.png" alt='faction image' width="50" /></div>
-                                            <div className='w-full flex justify-center'>
-                                                <div className='w-11/12 flex justify-start'>
-                                                    <p>Vichya Dominion</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#e52d27]" href="/faction/Vichya Dominion">
+                                    <img src="/images/faction/Faction Vichya Dominion 500x100.png" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
                             <br className="md:hidden"></br>
 
                             <div className="flex justify-center">
-                                <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#ffe259]" href="/faction/Sardegna Empire">
-                                    <div className={card_style.button_style}>
-                                        <div className="flex justify-start items-center w-full ">
-                                            <p>&nbsp;&nbsp;&nbsp;</p>
-                                            <div className="hidden dark:block"><img src="/images/faction/Sardegna Empire Iv.webp" alt='faction image' width="50" /></div>
-                                            <div className="block dark:hidden"><img src="/images/faction/Sardegna Empire.png" alt='faction image' width="50" /></div>
-                                            <div className='w-full flex justify-center'>
-                                                <div className='w-11/12 flex justify-start'>
-                                                    <p>Sardegna Empire</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#71fd03]" href="/faction/Sardegna Empire">
+                                    <img src="/images/faction/Faction Serdegna Empire 500x100.png" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
