@@ -20,6 +20,11 @@ export default function Ship_Card(ship: any) {
             chibi: null,
             gear: null,
             history: null,
+
+            aoa: null,
+            aoa_note: null,
+
+            ship_note: null,
         }
     });
 
@@ -95,79 +100,124 @@ export default function Ship_Card(ship: any) {
                 mrt_shape: "hover:scale-110 overflow-hidden group relative w-11/12 rounded-lg shadow-md border bg-neutral-200 hover:bg-neutral-300 border-gray-300 dark:border-gray-800 dark:bg-neutral-800 dark:hover:bg-neutral-700 border-b-4 border-t-1 border-l-1 border-r-1 duration-300",
                 image_style: "w-full rounded-lg shadow-xl",
                 mrt_image_src: "/images/MRT 600x300.png",
+                note_text: "text-zinc-600 dark:text-zinc-400 text-base md:text-lg w-11/12 md:w-3/4 border border-gray-500/10 p-2 rounded",
             }
         );
 
         return (
             <div>
-                <div id="shipdata" className={card_style.position}>
-                    <div className={card_style.shape}>
-                        <br></br>
-                        <h1 className={card_style.title_style}>
-                            {shipdata.data.faction_short != null ? <>
-                                {shipdata.data.faction_short + " "}
-                            </> : <></>}
-                            {shipdata.data.name}
-                        </h1>
-                        <br></br>
-                        <div className={card_style.body_style}>
-                            <p>Faction: {shipdata.data.faction}</p>
-                            <p>Type: {shipdata.data.type}</p>
-                            <div className="flex justify-center">
-                                <div className="w-11/12 md:w-11/12">
-                                    <p className="text-xs py-2">(รูปอาจจะโหลดช้าหน่อยนะ)</p>
-                                    {(shipdata.data.skill != null) ? <>
-                                        <img className="cursor-zoom-in object-scale-down" src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.skill} alt={shipdata.data.name + " picture"}
-                                            onClick={() => {
-                                                document.getElementById("present0")?.classList.remove("hidden")
-                                                document.getElementById("shipchibi")?.classList.add("hidden")
-                                                document.getElementById("shipdata")?.classList.add("hidden")
-                                                document.getElementById("shipdata2")?.classList.add("hidden")
-                                                document.getElementById("shipdata3")?.classList.add("hidden")
-                                                document.body.classList.remove("overflow-x-hidden");
-                                                document.body.classList.add("w-max");
-                                            }}
-                                        >
-                                        </img>
-                                    </> : <></>}
+                <div id="shipdata" >
+                    <div className={card_style.position}>
+                        <div className={card_style.shape}>
+                            <br></br>
+                            <h1 className={card_style.title_style}>
+                                {shipdata.data.faction_short != null ? <>
+                                    {shipdata.data.faction_short + " "}
+                                </> : <></>}
+                                {shipdata.data.name}
+                            </h1>
+                            <br></br>
+                            <div className={card_style.body_style}>
+                                <p>Faction: {shipdata.data.faction}</p>
+                                <p>Type: {shipdata.data.type}</p>
+                                <div className="flex justify-center">
+                                    <div className="w-11/12 md:w-11/12">
+                                        <p className="text-xs py-2">(รูปอาจจะโหลดช้าหน่อยนะ)</p>
+                                        {(shipdata.data.skill != null) ? <>
+                                            <img className="cursor-zoom-in object-scale-down" src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.skill} alt={shipdata.data.name + " picture"}
+                                                onClick={() => {
+                                                    document.getElementById("present0")?.classList.remove("hidden")
+                                                    document.getElementById("shipchibi")?.classList.add("hidden")
+                                                    document.getElementById("shipdata")?.classList.add("hidden")
+                                                    document.getElementById("shipdata2")?.classList.add("hidden")
+                                                    document.getElementById("shipdata3")?.classList.add("hidden")
+                                                    document.body.classList.remove("overflow-x-hidden");
+                                                    document.body.classList.add("w-max");
+                                                }}
+                                            >
+                                            </img>
+                                        </> : <></>}
 
-                                    {(shipdata.data.re != null) ? <>
-                                        <p>Retrofit</p>
-                                        <img className="cursor-zoom-in object-scale-down" src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.re} alt={shipdata.data.name + " picture"}
-                                            onClick={() => {
-                                                document.getElementById("present1")?.classList.remove("hidden")
-                                                document.getElementById("shipchibi")?.classList.add("hidden")
-                                                document.getElementById("shipdata")?.classList.add("hidden")
-                                                document.getElementById("shipdata2")?.classList.add("hidden")
-                                                document.getElementById("shipdata3")?.classList.add("hidden")
-                                                document.body.classList.remove("overflow-x-hidden");
-                                                document.body.classList.add("w-max");
-                                            }}
-                                        >
-                                        </img>
-                                    </> : <></>}
+                                        {(shipdata.data.re != null) ? <>
+                                            <p>Retrofit</p>
+                                            <img className="cursor-zoom-in object-scale-down" src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.re} alt={shipdata.data.name + " picture"}
+                                                onClick={() => {
+                                                    document.getElementById("present1")?.classList.remove("hidden")
+                                                    document.getElementById("shipchibi")?.classList.add("hidden")
+                                                    document.getElementById("shipdata")?.classList.add("hidden")
+                                                    document.getElementById("shipdata2")?.classList.add("hidden")
+                                                    document.getElementById("shipdata3")?.classList.add("hidden")
+                                                    document.body.classList.remove("overflow-x-hidden");
+                                                    document.body.classList.add("w-max");
+                                                }}
+                                            >
+                                            </img>
+                                        </> : <></>}
 
-                                    {(shipdata.data.fatesim != null) ? <>
-                                        <p>Fate Simulation</p>
-                                        <img className="cursor-zoom-in object-scale-down" src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.fatesim} alt={shipdata.data.name + " picture"}
-                                            onClick={() => {
-                                                document.getElementById("present2")?.classList.remove("hidden")
-                                                document.getElementById("shipchibi")?.classList.add("hidden")
-                                                document.getElementById("shipdata")?.classList.add("hidden")
-                                                document.getElementById("shipdata2")?.classList.add("hidden")
-                                                document.getElementById("shipdata3")?.classList.add("hidden")
-                                                document.body.classList.remove("overflow-x-hidden");
-                                                document.body.classList.add("w-max");
-                                            }}
-                                        >
-                                        </img>
-                                    </> : <></>}
+                                        {(shipdata.data.fatesim != null) ? <>
+                                            <p>Fate Simulation</p>
+                                            <img className="cursor-zoom-in object-scale-down" src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.fatesim} alt={shipdata.data.name + " picture"}
+                                                onClick={() => {
+                                                    document.getElementById("present2")?.classList.remove("hidden")
+                                                    document.getElementById("shipchibi")?.classList.add("hidden")
+                                                    document.getElementById("shipdata")?.classList.add("hidden")
+                                                    document.getElementById("shipdata2")?.classList.add("hidden")
+                                                    document.getElementById("shipdata3")?.classList.add("hidden")
+                                                    document.body.classList.remove("overflow-x-hidden");
+                                                    document.body.classList.add("w-max");
+                                                }}
+                                            >
+                                            </img>
+                                        </> : <></>}
 
+                                    </div>
                                 </div>
                             </div>
+                            <br></br>
                         </div>
-                        <br></br>
                     </div>
+
+                    {
+                        ((shipdata.data.aoa != null) || (shipdata.data.ship_note != null)) ?
+                            <>
+                                <br></br>
+                                <div className={card_style.position}>
+                                    <div className={card_style.shape}>
+                                        <div className={card_style.body_style + " z-10"}>
+                                            {
+                                                (shipdata.data.aoa != null) ?
+                                                    <>
+                                                        <br></br>
+                                                        <p className="pb-4">All Out Assault</p>
+                                                        <div className="flex justify-center pb-2">
+                                                            <img className="" src={shipdata.data.aoa} alt={shipdata.data.name + " aoa picture"}></img>
+                                                        </div>
+                                                        {(shipdata.data.aoa_note != null) ?
+                                                            <>
+                                                                <div className="flex justify-center">
+                                                                    <p className={card_style.note_text}>{shipdata.data.aoa_note}</p>
+                                                                </div>
+                                                            </> : <></>
+                                                        }
+                                                    </> : <></>
+                                            }
+                                            {
+                                                (shipdata.data.ship_note != null) ?
+                                                    <>
+                                                        <br></br>
+                                                        <p className="pb-4">Note</p>
+                                                        <div className="flex justify-center">
+                                                            <p className={card_style.note_text}>{shipdata.data.ship_note}</p>
+                                                        </div>
+                                                    </> : <></>
+                                            }
+                                        </div>
+                                        <br></br>
+                                    </div>
+                                </div>
+
+                            </> : <></>
+                    }
 
                 </div>
 
