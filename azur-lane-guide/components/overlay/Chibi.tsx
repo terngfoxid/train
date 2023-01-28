@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function Chibi(chibi: any) {
 
-    const [state, setState] = useState(1)
+    const [state, setState] = useState(3)
 
     useEffect(() => {
         setTimeout(() => {
