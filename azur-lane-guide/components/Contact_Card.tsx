@@ -21,7 +21,7 @@ export default function Contact_Card (){
           <div className={card_style.body_style}>
             <p>Skill Translator: <Link href="https://www.youtube.com/@Rolizami" className="px-2 rounded hover:bg-neutral-300 dark:hover:bg-neutral-700">Rolizami ライム</Link></p>
             <br></br>
-            <p>Web Programer: <Link href="https://www.youtube.com/@SSTfoxide" className="px-2 rounded hover:bg-neutral-300 dark:hover:bg-neutral-700">SSTfoxide</Link></p>
+            <p>Web Programmer: <Link href="https://www.youtube.com/@SSTfoxide" className="px-2 rounded hover:bg-neutral-300 dark:hover:bg-neutral-700">SSTfoxide</Link></p>
             <br></br>
             <p>Framework:  Next.js</p>
             <p>CSS:  Tailwind CSS + Animate.css</p>
