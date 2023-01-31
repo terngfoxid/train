@@ -56,7 +56,7 @@ export default function Home_Card() {
                                             &nbsp;ลบข้อมูลเว็บไซต์&nbsp;
                                         </button>
                                     </p>
-                                    <p className="py-1 ">***ขออภัยในความไม่สดวก***</p>
+                                    <p className="py-1 ">***ขออภัยในความไม่สะดวก***</p>
                                 </div>
                                 <br className="md:hidden"></br>
                                 <div className="flex justify-center items-center">
