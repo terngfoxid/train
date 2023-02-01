@@ -114,37 +114,17 @@ export default function Find_Ship_Card() {
                         <div className="w-5/6 md:w-full md:grid md:grid-cols-3 md:gap-y-2">
 
                             <div className="flex justify-center">
-                                <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#ffe259]" href="/faction/Tempesta">
-                                    <div className={card_style.button_style}>
-                                        <div className="flex justify-start items-center w-full ">
-                                            <p>&nbsp;&nbsp;&nbsp;</p>
-                                            <div className="hidden dark:block"><img src="/images/faction/Tempesta Iv.webp" alt='faction image' width="50" /></div>
-                                            <div className="block dark:hidden"><img src="/images/faction/Tempesta.png" alt='faction image' width="50" /></div>
-                                            <div className='w-full flex justify-center'>
-                                                <div className='w-11/12 flex justify-start'>
-                                                    <p>Tempesta</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#2193b0]" href="/faction/Tempesta">
+                                    <img src="/images/faction/Faction Tempesta 500x100.png" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
                             <br className="md:hidden"></br>
 
                             <div className="flex justify-center">
-                                <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#ffe259]" href="/faction/META">
-                                    <div className={card_style.button_style}>
-                                        <div className="flex justify-start items-center w-full ">
-                                            <p>&nbsp;&nbsp;&nbsp;</p>
-                                            <div className=""><img src="/images/faction/META.png" alt='faction image' width="50" /></div>
-                                            <div className='w-full flex justify-center'>
-                                                <div className='w-11/12 flex justify-start'>
-                                                    <p>META</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#ff9813]" href="/faction/META">
+                                <img src="/images/faction/Faction META 500x100.png" className={card_style.image_style} alt='button image' />
+                                    
                                 </Link>
                             </div>
 
