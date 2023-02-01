@@ -123,27 +123,15 @@ export default function Find_Ship_Card() {
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#ff9813]" href="/faction/META">
-                                <img src="/images/faction/Faction META 500x100.png" className={card_style.image_style} alt='button image' />
-                                    
+                                    <img src="/images/faction/Faction META 500x100.png" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
                             <br className="md:hidden"></br>
 
                             <div className="flex justify-center">
-                                <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#ffe259]" href="/faction/Collab">
-                                    <div className={card_style.button_style}>
-                                        <div className="flex justify-start items-center w-full ">
-                                            <p>&nbsp;&nbsp;&nbsp;</p>
-                                            <div className="hidden dark:block"><img src="/images/faction/Collab Iv.webp" alt='faction image' width="50" /></div>
-                                            <div className="block dark:hidden"><img src="/images/faction/Collab.png" alt='faction image' width="50" /></div>
-                                            <div className='w-full flex justify-center'>
-                                                <div className='w-11/12 flex justify-start'>
-                                                    <p >Collab</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#ffa8c1]" href="/faction/Collab">
+                                    <img src="/images/faction/Faction Callab 500x100.png" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
