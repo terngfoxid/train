@@ -15,7 +15,6 @@ export default function Active_Event_Card(ship: any) {
             name: null,
             newship: [],
             newship_chibi: [],
-            newship_name:[],
             newship_type:[],
             error:null,
         }
@@ -91,8 +90,10 @@ export default function Active_Event_Card(ship: any) {
                         <img className="object-scale-down rounded-lg" src={"https://drive.google.com/uc?export=view&id=" + eventdata.data.banner} alt={eventdata.data.banner + " picture"}></img>
                     </div>
                 </div>
-                <br></br>
 
+                {eventdata.data.newship.length != 0 ? 
+                <>
+                <br></br>
                 <div id="shipdata2" className={card_style.position}>
                     <div className={card_style.shape}>
                         <div className="flex justify-center">
@@ -103,7 +104,7 @@ export default function Active_Event_Card(ship: any) {
                         </div>
                         <br></br>
                     </div>
-                </div>
+                </div></>:<></>}
 
                 <br></br>
                 <div id="shipdata3" className={card_style.position}>
