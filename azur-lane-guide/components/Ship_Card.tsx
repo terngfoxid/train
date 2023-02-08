@@ -108,7 +108,7 @@ export default function Ship_Card(ship: any) {
                 body_style: "text-zinc-600 dark:text-zinc-400 text-2xl text-center",
                 mrt_shape: "hover:scale-110 overflow-hidden group relative w-11/12 rounded-lg shadow-md border bg-neutral-200 hover:bg-neutral-300 border-gray-300 dark:border-gray-800 dark:bg-neutral-800 dark:hover:bg-neutral-700 border-b-4 border-t-1 border-l-1 border-r-1 duration-300",
                 image_style: "w-full rounded-lg shadow-xl",
-                mrt_image_src: "/images/MRT 600x300.png",
+                mrt_image_src: "/images/MRT 600x300.webp",
                 note_text: "text-zinc-600 dark:text-zinc-400 text-base md:text-lg w-11/12 md:w-3/4 border border-gray-500/10 p-2 rounded",
             }
         );

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Loading from "../overlay/Loading";
+import Image from 'next/image'
 
 export default function B_Event_Card() {
 
@@ -60,7 +60,13 @@ export default function B_Event_Card() {
     return (
         <button className={card_style.shape}>
             <Link href="/active_event" className="w-full">
-                <img src={"https://drive.google.com/uc?export=view&id=" + eventdata.data.button} className={card_style.image_style} alt='button image' />
+                <Image
+                    src={"https://drive.google.com/uc?export=view&id=" + eventdata.data.button}
+                    className={card_style.image_style}
+                    alt='button image'
+                    width="600"
+                    height="300"
+                />
             </Link>
         </button>
     )
