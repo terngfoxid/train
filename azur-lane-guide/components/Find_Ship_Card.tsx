@@ -22,7 +22,7 @@ export default function Find_Ship_Card() {
                 <div className={card_style.body_style}>
                     <div className="flex justify-center items-center md:text-3xl">
                         <div className='w-1/2 md:w-1/4 border border-[#ffe259]'>
-                            <img src="/images/Faction main.png" className={card_style.image_style} alt='image' />
+                            <img src="/images/Faction main.webp" className={card_style.image_style} alt='image' />
                         </div>
                     </div>
                     <br></br>
@@ -105,7 +105,7 @@ export default function Find_Ship_Card() {
                     <br></br>
                     <div className="flex justify-center items-center md:text-3xl">
                         <div className='w-1/2 md:w-1/4 border border-[#ffe259]'>
-                            <img src="/images/Faction extra.png" className={card_style.image_style} alt='image' />
+                            <img src="/images/Faction extra.webp" className={card_style.image_style} alt='image' />
                         </div>
                     </div>
                     <br></br>
