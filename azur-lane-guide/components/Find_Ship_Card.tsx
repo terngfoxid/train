@@ -31,7 +31,7 @@ export default function Find_Ship_Card() {
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#00d8ff]" href="/faction/Eagle Union">
-                                    <img src="/images/faction/Faction Eagle Union 500x100.png" className={card_style.image_style} alt='button image' />
+                                    <img src="/images/faction/Faction Eagle Union 500x100.webp" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
@@ -39,7 +39,7 @@ export default function Find_Ship_Card() {
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#ffe259]" href="/faction/Royal Navy">
-                                    <img src="/images/faction/Faction Royal Navy 500x100.png" className={card_style.image_style} alt='button image' />
+                                    <img src="/images/faction/Faction Royal Navy 500x100.webp" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
@@ -47,7 +47,7 @@ export default function Find_Ship_Card() {
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center  hover:scale-110 duration-300 rounded border border-[#ed4264]" href="/faction/Sakura Empire">
-                                    <img src="/images/faction/Faction Sakura Empire 500x100.png" className={card_style.image_style} alt='button image' />
+                                    <img src="/images/faction/Faction Sakura Empire 500x100.webp" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
@@ -55,7 +55,7 @@ export default function Find_Ship_Card() {
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center  hover:scale-110 duration-300 rounded border border-[#ff1c23]" href="/faction/Iron Blood">
-                                    <img src="/images/faction/Faction Iron Blood 500x100.png" className={card_style.image_style} alt='button image' />
+                                    <img src="/images/faction/Faction Iron Blood 500x100.webp" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
@@ -63,7 +63,7 @@ export default function Find_Ship_Card() {
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#90f9c4]" href="/faction/Dragon Empery">
-                                    <img src="/images/faction/Faction Dragon Empery 500x100.png" className={card_style.image_style} alt='button image' />
+                                    <img src="/images/faction/Faction Dragon Empery 500x100.webp" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
@@ -71,7 +71,7 @@ export default function Find_Ship_Card() {
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#12d8fa]" href="/faction/Northern Parliament">
-                                    <img src="/images/faction/Faction Northern Parliament 500x100.png" className={card_style.image_style} alt='button image' />
+                                    <img src="/images/faction/Faction Northern Parliament 500x100.webp" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
@@ -79,7 +79,7 @@ export default function Find_Ship_Card() {
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#fff83e]" href="/faction/Iris Libre">
-                                    <img src="/images/faction/Faction Iris Libre 500x100.png" className={card_style.image_style} alt='button image' />
+                                    <img src="/images/faction/Faction Iris Libre 500x100.webp" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
@@ -87,7 +87,7 @@ export default function Find_Ship_Card() {
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#e52d27]" href="/faction/Vichya Dominion">
-                                    <img src="/images/faction/Faction Vichya Dominion 500x100.png" className={card_style.image_style} alt='button image' />
+                                    <img src="/images/faction/Faction Vichya Dominion 500x100.webp" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
@@ -95,7 +95,7 @@ export default function Find_Ship_Card() {
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#71fd03]" href="/faction/Sardegna Empire">
-                                    <img src="/images/faction/Faction Serdegna Empire 500x100.png" className={card_style.image_style} alt='button image' />
+                                    <img src="/images/faction/Faction Serdegna Empire 500x100.webp" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
@@ -115,7 +115,7 @@ export default function Find_Ship_Card() {
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#2193b0]" href="/faction/Tempesta">
-                                    <img src="/images/faction/Faction Tempesta 500x100.png" className={card_style.image_style} alt='button image' />
+                                    <img src="/images/faction/Faction Tempesta 500x100.webp" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
@@ -123,7 +123,7 @@ export default function Find_Ship_Card() {
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#ff9813]" href="/faction/META">
-                                    <img src="/images/faction/Faction META 500x100.png" className={card_style.image_style} alt='button image' />
+                                    <img src="/images/faction/Faction META 500x100.webp" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
@@ -131,7 +131,7 @@ export default function Find_Ship_Card() {
 
                             <div className="flex justify-center">
                                 <Link className="w-11/12 flex items-center hover:scale-110 duration-300 rounded border border-[#ffa8c1]" href="/faction/Collab">
-                                    <img src="/images/faction/Faction Callab 500x100.png" className={card_style.image_style} alt='button image' />
+                                    <img src="/images/faction/Faction Callab 500x100.webp" className={card_style.image_style} alt='button image' />
                                 </Link>
                             </div>
 
