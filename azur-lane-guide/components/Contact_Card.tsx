@@ -4,7 +4,7 @@ export default function Contact_Card (){
   
     const card_style = (
       {
-        title: 'Contact',
+        title:'ผู้จัดทำ',
         title_style: 'text-zinc-700 dark:text-zinc-300 text-2xl font-bold text-center',
         shape:"w-11/12 md:w-1/2 2xl:w-1/3 rounded-lg shadow-md border bg-neutral-200 border-gray-300 dark:border-gray-700 dark:bg-neutral-800",
         position:"flex justify-center",
@@ -19,7 +19,9 @@ export default function Contact_Card (){
           <h1 className={card_style.title_style}>{card_style.title}</h1>
           <br></br>
           <div className={card_style.body_style}>
-            <p>Skill Translator: <Link href="https://www.youtube.com/@Rolizami" className="px-2 rounded hover:bg-neutral-300 dark:hover:bg-neutral-700">Rolizami ライム</Link></p>
+            <p className="py-1">Skill Translator: <Link href="https://www.youtube.com/@Rolizami" className="px-2 rounded hover:bg-neutral-300 dark:hover:bg-neutral-700">Rolizami ライム</Link></p>
+            <p className="py-1">History Translator: <Link href="javascript:void(0);" className="cursor-default px-2 rounded ">MR.T</Link></p>
+            <p className="py-1">Admin: <Link href="javascript:void(0);" className="cursor-default px-2 rounded ">EX:SELRENS</Link></p>
             <br></br>
             <p>Web Programmer: <Link href="https://www.youtube.com/@SSTfoxide" className="px-2 rounded hover:bg-neutral-300 dark:hover:bg-neutral-700">SSTfoxide</Link></p>
             <br></br>
