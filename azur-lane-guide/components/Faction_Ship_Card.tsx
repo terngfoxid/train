@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Loading from "./overlay/Loading";
+import Image from 'next/image'
 
 export default function Faction_Ship_Card(faction: any) {
     const [shipdata, setShipdata] = useState({ data: { error: null, data: [{ name: null, type: null, chibi: null }] } });
@@ -91,29 +92,34 @@ export default function Faction_Ship_Card(faction: any) {
                 let hidden = ""
 
                 if (type != "All Type") {
-                    if (type == "AE") { if ((shipdata.data.data[buffer].type != "AE")) hidden=" hidden" }
-                    else if (type == "AR") { if ((shipdata.data.data[buffer].type != "AR")) hidden=" hidden" }
-                    else if (type == "BB") { if ((shipdata.data.data[buffer].type != "BB")) hidden=" hidden" }
-                    else if (type == "BC") { if ((shipdata.data.data[buffer].type != "BC")) hidden=" hidden" }
-                    else if (type == "BM") { if ((shipdata.data.data[buffer].type != "BM")) hidden=" hidden" }
-                    else if (type == "CA") { if ((shipdata.data.data[buffer].type != "CA")) hidden=" hidden" }
-                    else if (type == "CB") { if ((shipdata.data.data[buffer].type != "CB")) hidden=" hidden" }
-                    else if (type == "CL") { if ((shipdata.data.data[buffer].type != "CL")) hidden=" hidden" }
-                    else if (type == "CV") { if ((shipdata.data.data[buffer].type != "CV")) hidden=" hidden" }
-                    else if (type == "CVL") { if ((shipdata.data.data[buffer].type != "CVL")) hidden=" hidden" }
-                    else if (type == "DD") { if ((shipdata.data.data[buffer].type != "DD")) hidden=" hidden" }
-                    else if (type == "IX") { if ((shipdata.data.data[buffer].type != "IX")) hidden=" hidden" }
-                    else if (type == "SS") { if ((shipdata.data.data[buffer].type != "SS")) hidden=" hidden" }
-                    else if (type == "SSV") { if ((shipdata.data.data[buffer].type != "SSV")) hidden=" hidden" }
+                    if (type == "AE") { if ((shipdata.data.data[buffer].type != "AE")) hidden = " hidden" }
+                    else if (type == "AR") { if ((shipdata.data.data[buffer].type != "AR")) hidden = " hidden" }
+                    else if (type == "BB") { if ((shipdata.data.data[buffer].type != "BB")) hidden = " hidden" }
+                    else if (type == "BC") { if ((shipdata.data.data[buffer].type != "BC")) hidden = " hidden" }
+                    else if (type == "BM") { if ((shipdata.data.data[buffer].type != "BM")) hidden = " hidden" }
+                    else if (type == "CA") { if ((shipdata.data.data[buffer].type != "CA")) hidden = " hidden" }
+                    else if (type == "CB") { if ((shipdata.data.data[buffer].type != "CB")) hidden = " hidden" }
+                    else if (type == "CL") { if ((shipdata.data.data[buffer].type != "CL")) hidden = " hidden" }
+                    else if (type == "CV") { if ((shipdata.data.data[buffer].type != "CV")) hidden = " hidden" }
+                    else if (type == "CVL") { if ((shipdata.data.data[buffer].type != "CVL")) hidden = " hidden" }
+                    else if (type == "DD") { if ((shipdata.data.data[buffer].type != "DD")) hidden = " hidden" }
+                    else if (type == "IX") { if ((shipdata.data.data[buffer].type != "IX")) hidden = " hidden" }
+                    else if (type == "SS") { if ((shipdata.data.data[buffer].type != "SS")) hidden = " hidden" }
+                    else if (type == "SSV") { if ((shipdata.data.data[buffer].type != "SSV")) hidden = " hidden" }
                 }
 
                 ship_list.push(
-                    <div id={(shipdata.data.data[buffer].name + "_box").toLowerCase()} className={"flex justify-center"+hidden}>
-                        <Link className={card_style.body_style+" "+card_style.button_style} href={"/ship/" + shipdata.data.data[buffer].name}>
-                        <div id={(shipdata.data.data[buffer].name + "").toLowerCase()} className={""}>
-                            <div>                               
+                    <div id={(shipdata.data.data[buffer].name + "_box").toLowerCase()} className={"flex justify-center" + hidden}>
+                        <Link className={card_style.body_style + " " + card_style.button_style} href={"/ship/" + shipdata.data.data[buffer].name}>
+                            <div id={(shipdata.data.data[buffer].name + "").toLowerCase()} className={""}>
+                                <div>
                                     <div className="flex justify-start items-center w-full">
-                                        <img src={"/images/type/" + shipdata.data.data[buffer].type + ".webp"} alt='type image' width="50" />
+                                        <Image
+                                            src={"/images/type/" + shipdata.data.data[buffer].type + ".webp"}
+                                            alt='type image'
+                                            width="49"
+                                            height="30"
+                                        />
                                         <div className="truncate inline-block rounded bg-neutral-400 dark:bg-neutral-600 w-full">
                                             <p className="max-w-fit">&nbsp;{shipdata.data.data[buffer].name}</p>
                                         </div>
@@ -121,12 +127,15 @@ export default function Faction_Ship_Card(faction: any) {
                                     <div>
                                         {shipdata.data.data[buffer].chibi != null ? <>
                                             <div className="w-full flex justify-center items-center aspect-square md:aspect-video">
-                                                <img src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.data[buffer].chibi} alt='ship chibi image' />
+                                                    <img
+                                                        src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.data[buffer].chibi}
+                                                        alt='ship chibi image'
+                                                    />
                                             </div></> : <></>
                                         }
-                                    </div>                               
+                                    </div>
+                                </div>
                             </div>
-                        </div>
                         </Link>
                     </div>
                 )
@@ -135,23 +144,23 @@ export default function Faction_Ship_Card(faction: any) {
             const searchFunction = (event: { preventDefault: () => void; }) => {
                 event.preventDefault();
                 let move = false;
-                
+
                 for (count = 0; count < shipdata.data.data.length; count++) {
                     const buffer = count
                     document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.classList.remove("border-2")
                     document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.classList.remove("border-red-500")
                     document.getElementById((shipdata.data.data[buffer].name + "_box").toLowerCase())?.classList.remove("hidden")
                 }
-                if(((search ==null) ||(search == ""))&&(type == "All Type")) return;
+                if (((search == null) || (search == "")) && (type == "All Type")) return;
 
                 for (count = 0; count < shipdata.data.data.length; count++) {
                     const buffer = count
-                    if ((search.toLowerCase() == (shipdata.data.data[buffer].name + "").toLowerCase())&&(type == shipdata.data.data[buffer].type ||type == "All Type")) {
+                    if ((search.toLowerCase() == (shipdata.data.data[buffer].name + "").toLowerCase()) && (type == shipdata.data.data[buffer].type || type == "All Type")) {
                         var access = document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase());
-                        if ((access != null )&&(move == false)){
+                        if ((access != null) && (move == false)) {
                             access.scrollIntoView({ behavior: 'smooth' });
                             move = true;
-                        } 
+                        }
                         document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.focus();
                         document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.classList.add("border-2")
                         document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.classList.add("border-red-500")
@@ -162,10 +171,10 @@ export default function Faction_Ship_Card(faction: any) {
                     if (document.body.textContent.toLowerCase().includes(search.toLowerCase())) {
                         for (count = 0; count < shipdata.data.data.length; count++) {
                             const buffer = count
-                            
-                            if ((document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.textContent?.toLowerCase().includes(search.toLowerCase()))&&(type == shipdata.data.data[buffer].type ||type == "All Type")) {
+
+                            if ((document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase())?.textContent?.toLowerCase().includes(search.toLowerCase())) && (type == shipdata.data.data[buffer].type || type == "All Type")) {
                                 var access = document.getElementById((shipdata.data.data[buffer].name + "").toLowerCase());
-                                if ((access != null )&&(move == false)){
+                                if ((access != null) && (move == false)) {
                                     access.scrollIntoView({ behavior: 'smooth' });
                                     move = true;
                                 }
