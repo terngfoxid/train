@@ -13,6 +13,7 @@ export default function B_Event_Card() {
     const callAPI = async () => {
         try {
             const res = await fetch('/api/active_event');
+            //const res = await fetch('https://al-guide-th.vercel.app/api/active_event');
             const loaddata = await res.json()
             setEventdata({ data: loaddata })
             return
