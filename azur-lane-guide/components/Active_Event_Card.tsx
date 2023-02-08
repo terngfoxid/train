@@ -64,7 +64,7 @@ export default function Active_Event_Card(ship: any) {
                             <div>
                                 <Link className={card_style.body_style} href={"/ship/" + eventdata.data.newship[buffer]}>
                                     <div className="flex justify-start items-center w-full">
-                                        <img src={"/images/type/" + eventdata.data.newship_type[buffer] + ".png"} alt='type image' width="50" />
+                                        <img src={"/images/type/" + eventdata.data.newship_type[buffer] + ".webp"} alt='type image' width="50" />
                                         <div className="truncate inline-block rounded bg-neutral-400 dark:bg-neutral-600 w-full">
                                             <p className="max-w-fit">&nbsp;{eventdata.data.newship[buffer]}</p>
                                         </div>

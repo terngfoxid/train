@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Image from 'next/image'
 
 export default function Chibi_Event(chibi: any) {
 
@@ -24,7 +25,12 @@ export default function Chibi_Event(chibi: any) {
         <div id="shipchibi" className={chibi_style.set_overlay}>
             <div className="flex justify-items-start animate__animated animate__fadeInUp animate__slow">
                 <div className="w-20 md:w-max">
-                <img className="cursor-not-allowed" src={"https://drive.google.com/uc?export=view&id=" + chibi.chibi} alt='ship chibi image' 
+                <Image 
+                className="cursor-not-allowed" 
+                src={"https://drive.google.com/uc?export=view&id=" + chibi.chibi} 
+                alt='ship chibi image' 
+                width="152"
+                height="150"
                 onClick={ event =>{
                     if(state!= 0)setState(0)
                     else{setState(1)}
