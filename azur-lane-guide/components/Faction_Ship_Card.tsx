@@ -111,10 +111,9 @@ export default function Faction_Ship_Card(faction: any) {
                     <div id={(shipdata.data.data[buffer].name + "_box").toLowerCase()} className={"flex justify-center"+hidden}>
                         <Link className={card_style.body_style+" "+card_style.button_style} href={"/ship/" + shipdata.data.data[buffer].name}>
                         <div id={(shipdata.data.data[buffer].name + "").toLowerCase()} className={""}>
-                            <div>
-                                
+                            <div>                               
                                     <div className="flex justify-start items-center w-full">
-                                        <img src={"/images/type/" + shipdata.data.data[buffer].type + ".png"} alt='type image' width="50" />
+                                        <img src={"/images/type/" + shipdata.data.data[buffer].type + ".webp"} alt='type image' width="50" />
                                         <div className="truncate inline-block rounded bg-neutral-400 dark:bg-neutral-600 w-full">
                                             <p className="max-w-fit">&nbsp;{shipdata.data.data[buffer].name}</p>
                                         </div>
@@ -125,8 +124,7 @@ export default function Faction_Ship_Card(faction: any) {
                                                 <img src={"https://drive.google.com/uc?export=view&id=" + shipdata.data.data[buffer].chibi} alt='ship chibi image' />
                                             </div></> : <></>
                                         }
-                                    </div>
-                                
+                                    </div>                               
                             </div>
                         </div>
                         </Link>
