@@ -39,8 +39,8 @@ export default function Ship_Card(ship: any) {
 
     const callAPI = async () => {
         try {
-            //const res = await fetch('/api/ship/' + ship.ship.toLowerCase());
-            const res = await fetch('https://al-guide-th.vercel.app/api/ship/' + ship.ship.toLowerCase());
+            const res = await fetch('/api/ship/' + ship.ship.toLowerCase());
+            //const res = await fetch('https://al-guide-th.vercel.app/api/ship/' + ship.ship.toLowerCase());
 
             const loaddata = await res.json()
             setShipdata({ data: loaddata })

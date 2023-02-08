@@ -15,8 +15,8 @@ export default function Faction_Ship_Card(faction: any) {
 
     const callAPI = async () => {
         try {
-            //const res = await fetch('/api/faction/' + faction.faction)
-            const res = await fetch('https://al-guide-th.vercel.app/api/faction/' + faction.faction);
+            const res = await fetch('/api/faction/' + faction.faction)
+            //const res = await fetch('https://al-guide-th.vercel.app/api/faction/' + faction.faction);
             const loaddata = await res.json()
             setShipdata({ data: loaddata })
             return
