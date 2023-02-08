@@ -19,11 +19,11 @@ export default function Contact_Card (){
           <h1 className={card_style.title_style}>{card_style.title}</h1>
           <br></br>
           <div className={card_style.body_style}>
-            <p className="py-1">Skill Translator: <Link href="https://www.youtube.com/@Rolizami" className="px-2 rounded hover:bg-neutral-300 dark:hover:bg-neutral-700">Rolizami ライム</Link></p>
-            <p className="py-1">History Translator: <Link href="javascript:void(0);" className="cursor-default px-2 rounded ">MR.T</Link></p>
-            <p className="py-1">Admin: <Link href="javascript:void(0);" className="cursor-default px-2 rounded ">EX:SELRENS</Link></p>
+            <p className="py-1">Skill Translator: <Link legacyBehavior href="https://www.youtube.com/@Rolizami"><a target="_blank" className="px-2 rounded hover:bg-neutral-300 dark:hover:bg-neutral-700">Rolizami ライム</a></Link></p>
+            <p className="py-1">History Translator: <Link legacyBehavior href="javascript:void(0);" ><a className="cursor-default px-2 rounded ">MR.T</a></Link></p>
+            <p className="py-1">Admin: <Link legacyBehavior href="javascript:void(0);" ><a className="cursor-default px-2 rounded ">EX:SELRENS</a></Link></p>
             <br></br>
-            <p>Web Programmer: <Link href="https://www.youtube.com/@SSTfoxide" className="px-2 rounded hover:bg-neutral-300 dark:hover:bg-neutral-700">SSTfoxide</Link></p>
+            <p>Web Programmer: <Link legacyBehavior href="https://www.youtube.com/@SSTfoxide"><a target="_blank" className="px-2 rounded hover:bg-neutral-300 dark:hover:bg-neutral-700">SSTfoxide</a></Link></p>
             <br></br>
             <p>Framework:  Next.js</p>
             <p>CSS:  Tailwind CSS + Animate.css</p>
