@@ -112,7 +112,7 @@ export default function Faction_Ship_Card(faction: any) {
                 ship_list.push(
                     <div id={(shipdata.data.data[buffer].name + "_box").toLowerCase()} className={"flex justify-center" + hidden}>
                         <Link className={card_style.body_style + " " + card_style.button_style} href={"/ship/" + shipdata.data.data[buffer].name}>
-                            <div id={(shipdata.data.data[buffer].name + "").toLowerCase()} className={""}>
+                            <div id={(shipdata.data.data[buffer].name + "").toLowerCase()} className={"rounded-lg"}>
                                 <div>
                                     <div className="flex justify-start items-center w-full">
                                         <Image

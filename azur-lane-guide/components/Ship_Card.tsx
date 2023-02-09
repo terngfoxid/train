@@ -20,6 +20,7 @@ export default function Ship_Card(ship: any) {
             chibi: null,
             gear: null,
             history: null,
+            review: null,
 
             aoa: null,
             aoa_note: null,
@@ -111,6 +112,7 @@ export default function Ship_Card(ship: any) {
                 mrt_shape: "hover:scale-110 overflow-hidden group relative w-11/12 rounded-lg shadow-md border bg-neutral-200 hover:bg-neutral-300 border-gray-300 dark:border-gray-800 dark:bg-neutral-800 dark:hover:bg-neutral-700 border-b-4 border-t-1 border-l-1 border-r-1 duration-300",
                 image_style: "w-full rounded-lg shadow-xl",
                 mrt_image_src: "/images/MRT 600x300.webp",
+                yt_image_src: "/images/MRT 600x300.webp",
                 note_text: "text-zinc-600 dark:text-zinc-400 text-base md:text-lg w-11/12 md:w-3/4 border border-gray-500/10 p-2 rounded",
             }
         );
@@ -333,22 +335,30 @@ export default function Ship_Card(ship: any) {
                             <div className="w-full md:w-5/6 2xl:w-2/3">
                                 <div className='md:grid md:grid-cols-2'>
                                     <div className='flex justify-center md:justify-start'>
-                                        <div>
-
-                                        </div>
+                                        {(shipdata.data.review != null) ?
+                                            <button className={card_style.mrt_shape}>
+                                                <Link href={shipdata.data.review} className="w-full" legacyBehavior>
+                                                    <a target="_blank">
+                                                        <img src={card_style.mrt_image_src} className={card_style.image_style} alt='Youtube button image' />
+                                                    </a>
+                                                </Link>
+                                            </button> : <></>
+                                        }
                                     </div>
-                                    <br className='block md:hidden'></br>
                                     {(shipdata.data.history != null) ?
-                                        <div className='flex justify-center md:justify-end'>
+                                        <br className='block md:hidden'></br> : <></>
+                                    }
+                                    <div className='flex justify-center md:justify-end'>
+                                        {(shipdata.data.history != null) ?
                                             <button className={card_style.mrt_shape}>
                                                 <Link href={shipdata.data.history} className="w-full" legacyBehavior>
                                                     <a target="_blank">
-                                                        <img src={card_style.mrt_image_src} className={card_style.image_style} alt='Mr.T button image' />
+                                                        <img src={card_style.yt_image_src} className={card_style.image_style} alt='Mr.T button image' />
                                                     </a>
                                                 </Link>
-                                            </button>
-                                        </div> : <></>
-                                    }
+                                            </button> : <></>
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>
