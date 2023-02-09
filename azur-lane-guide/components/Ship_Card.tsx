@@ -342,7 +342,7 @@ export default function Ship_Card(ship: any) {
                                                         <img src={card_style.mrt_image_src} className={card_style.image_style} alt='Youtube button image' />
                                                     </a>
                                                 </Link>
-                                            </button> : <></>
+                                            </button> : <></> 
                                         }
                                     </div>
                                     {(shipdata.data.history != null) ?
